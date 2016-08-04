@@ -1,1 +1,13 @@
-<div class="aside__content"></div>
+<div class="aside__content">
+  <h2 class="aside__title">Aktuelt</h2>
+  <ul class="related-content__list content-list">
+    {% for i in range(0,6) %}
+    <li class="content-list__item">
+      <div class="content-list__item-image" style="background-image: url('images/unsplash01.jpg')">
+        <img src="images/unsplash01.jpg" alt="Blåbær!" />
+      </div>
+      <h4 class="content-list__item-title">Er hydrogenbilen det neste store for nordmenn?</h4>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
