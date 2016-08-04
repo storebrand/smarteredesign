@@ -1,0 +1,144 @@
+.article {
+
+}
+
+// HEADER, TYPICALLY WITH TITLE, IMAGE AND TAGS
+.article__header {
+
+}
+
+  // CONTENT WRAPPER
+  .article__header-content {
+
+  }
+
+    // THE ARTICLE TITLE
+    .article__title {
+
+    }
+
+    // THE ARTICLE AUTHOR
+    .article__author {
+
+    }
+
+  // MOST OF THE ARTICLE, EXCEPT HEADER AND FOOTER
+  // INCLUDING RELATED COLUMN
+  .article__body {
+
+  }
+
+    // ASIDE CONTENT - eg. RELATED CONTENT
+    .article__aside {
+
+    }
+
+    // ARTICLE CONTENT EXCLUDING ASIDE CONTENT
+    .article__content {
+
+    }
+
+      // ARTICLE ABSTRACT / SUMMARY
+      .article__abstract {
+
+      }
+
+      // META META LIKE ARTICLE INFO AND SHARING
+      .article__meta {
+
+      }
+
+        // ARTICLE LENGTH INDICATOR
+        .article__meta-length {
+
+        }
+
+        // ARTICLE SHARE MODULE
+        .article__share {
+
+        }
+
+        // ARTICLE BODY TEXT INCL. SIMPLE PARAGRAPHS
+        // AND COMPLEX MODULES
+        .article__body-text {
+          h3 {
+
+          }
+
+          p {
+
+          }
+        }
+
+          // BODY IMAGE MODULE
+          .article__body-image {
+            img {
+
+            }
+
+            figcaption {
+
+            }
+          }
+
+        // ARTICLE QUOTE MODULE
+        .article__quote-wrapper {
+
+        }
+
+          // THE QUOTE TEXT
+          .article__quote {
+
+          }
+
+          // THE SOURCE OF THE QUOTE
+          .article__quote-source {
+
+          }
+
+
+        // ARTICLE INFOGRAPHICS MODULE
+        .article__infographics {
+
+        }
+
+
+
+  // TAGS WRAPPER - USED BOTH IN HEADER AND BODY TEXT
+  .article__tags {
+
+  }
+
+    // ARTICLE TAG
+    .article__tag {
+      .article__header & {
+
+      }
+    }
+
+  // ARTICLE NAVIGATION (PREV / NEXT )
+  .article__nav {
+
+  }
+
+    // ARTICLE NAVIGATION ITEM
+    .article__nav-item {
+
+      // PREVIOUS
+      &.article--prev {
+
+      }
+
+      // NEXT
+      &.article--next {
+
+      }
+
+    }
+
+  // ARTICLE RELATED ITEMS GRID
+  // PROBABLY WANT NEED SPECIAL STYLING
+  // USE _grid.scss INSTEAD
+  .article__related-items {
+
+  }
