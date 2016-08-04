@@ -3,6 +3,11 @@
   font-weight: 400;
 }
 
+@mixin open-sans-light {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
 @mixin open-sans-semi {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;

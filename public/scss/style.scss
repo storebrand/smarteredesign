@@ -1,17 +1,37 @@
 /* USING BEM http://getbem.com/introduction/ */
 
+$color-white: #FFF;
+$color-black: #000;
+$color-profile: #bb1b18;
+$color-grey: #e6e6e6;
+
+
+$font-size: 16px;
+$font-size-plus: 1.125rem;
+
+$font-size-xs: 0.8125rem; //13
+$font-size-s: 0.9375rem; //15
+$font-size-ms: 1.375rem; //22
+$font-size-xl: 4.25rem; //68
+
+@import "mixins";
 @import "fonts";
 
 html {
-
+  width: 100%;
 }
 
 body {
-  @include open-sans;
+  @include open-sans-light;
   font-size: 16px;
+  line-height: 1.5em;
+  -webkit-font-smoothing: antialiased;
+
 
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 @import "article";
