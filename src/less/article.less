@@ -19,7 +19,7 @@
   .article__header-content {
     // background-color: rgba(0,0,0,0.4);
 
-    @include vertical-gradient;
+    .vertical-gradient;
 
     position: absolute;
     z-index: 2;
@@ -28,14 +28,14 @@
     width: 100%;
     padding: 32px 0;
 
-    color: $color-white;
+    color: @color-white;
     text-align: center;
   }
 
     // THE ARTICLE TITLE
     .article__title {
-      @include signa;
-      font-size: $font-size-xl;
+      .signa;
+      font-size: @font-size-xl;
       margin: 0.6em 0;
     }
 
@@ -53,11 +53,14 @@
 
     // ASIDE CONTENT - eg. RELATED CONTENT
     .article__aside {
-      display: table-cell;
-      vertical-align: top;
-      border-right: 1px solid $color-grey;
-      width: 20%;
-      min-width: 200px;
+      @media (min-width: @break-point-m) {
+        display: table-cell;
+        vertical-align: top;
+        border-right: 1px solid @color-grey;
+        width: 20%;
+        min-width: 200px;
+      }
+
     }
 
       // ASIDE CONTENT
@@ -66,21 +69,58 @@
       }
 
         .aside__title {
-          @include open-sans;
+          .open-sans;
           text-transform: uppercase;
-          font-size: $font-size-s;
+          font-size: @font-size-s;
           margin: 1rem 0;
+        }
+
+        // ASIDE - RELATED CONTENT LIST WRAPPER TO ALLOW SCROLLING ON SMALL SCREENS
+        .content-list__wrapper {
+          @media (max-width: @break-point-m-min) {
+            position: relative;
+            &:before, &:after {
+              content: " ";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 15vw;
+              height: 100%;
+              z-index: 10;
+            }
+
+            &:before {
+              .left-to-right-gradient;
+            }
+
+            &:after {
+              .right-to-left-gradient;
+              right: 0;
+              left: auto;
+            }
+          }
         }
 
         // ASIDE - RELATED CONTENT LIST
         .related-content__list {
           list-style: none;
           padding: 0;
+          white-space: nowrap;
+
+          @media (max-width: @break-point-m-min) {
+            overflow-x: scroll;
+            width: 100vw;
+          }
         }
 
           // ASIDE - RELATED CONTENT LIST ITEM
           .content-list__item {
-
+            @media (max-width: @break-point-m-min) {
+              display: inline-block;
+              vertical-align: top;
+              margin: 0 10px;
+              width: 50vw;
+            }
           }
 
             .content-list__item-image {
@@ -109,9 +149,11 @@
 
     // ARTICLE CONTENT EXCLUDING ASIDE CONTENT
     .article__content {
-      display: table-cell;
-      vertical-align: top;
-      width: 80%;
+      @media (min-width: @break-point-m) {
+        display: table-cell;
+        vertical-align: top;
+        width: 80%;
+      }
     }
 
       // ARTICLE ABSTRACT / SUMMARY
@@ -168,9 +210,9 @@
             }
 
             figcaption {
-              font-size: $font-size-xs;
+              font-size: @font-size-xs;
               font-style: italic;
-              border-bottom: 1px solid $color-black;
+              border-bottom: 1px solid @color-black;
               padding-bottom: 5px;
             }
           }
@@ -206,23 +248,23 @@
     // ARTICLE TAG
     .article__tag {
       display: inline-block;
-      border: 1px solid $color-profile;
+      border: 1px solid @color-profile;
       padding: 4px 12px;
       text-transform: uppercase;
-      color: $color-profile;
+      color: @color-profile;
       text-decoration: none;
-      font-size: $font-size-xs;
+      font-size: @font-size-xs;
 
       .article__header & {
-        color: $color-white;
-        border-color: $color-white;
+        color: @color-white;
+        border-color: @color-white;
       }
     }
 
   // ARTICLE NAVIGATION (PREV / NEXT )
   .article__nav {
     font-size: 0;
-    border-top: 1px solid $color-grey;
+    border-top: 1px solid @color-grey;
     padding: 1rem;
   }
 
@@ -271,14 +313,14 @@
       }
 
       .nav-item__label {
-        @include open-sans-semi;
-        font-size: $font-size-xs;
+        .open-sans-semi;
+        font-size: @font-size-xs;
         text-transform: uppercase;
-        color: $color-grey-dark;
+        color: @color-grey-dark;
       }
 
       .nav-item__title {
-        font-size: $font-size-plus;
+        font-size: @font-size-plus;
         margin: 0.4em 0;
       }
 

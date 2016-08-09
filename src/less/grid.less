@@ -1,0 +1,89 @@
+
+@grid-padding: 3rem;
+
+// SECTION GRID
+.section__grid {
+  border-top: 1px solid @color-grey;
+  padding-bottom: 2rem;
+}
+
+// SECTION GRID WITH TWO COLUMNS PR ROW
+.section__grid--two {
+
+}
+
+// SECTION GRID WITH FOUR COLUMNS PR ROW
+.section__grid--four {
+
+}
+
+  // GRID HEADING
+  .section__grid-title {
+    .open-sans;
+    text-transform: uppercase;
+    font-size: @font-size-s;
+    margin: 2rem 0;
+  }
+
+  // THE ACTUAL GRID WITH FLEX FUNC.
+  .section__grid-content {
+    display: flex;
+    flex-flow: row;
+    margin: 0;
+    margin-left: -@grid-padding;
+    margin-top: -@grid-padding;
+
+  }
+
+  // GRID ITEM GENERAL STYLES
+  .grid-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: @grid-padding 0 0 @grid-padding;
+    box-sizing: border-box;
+
+    .section__grid--four & {
+      flex-basis: 25%;
+    }
+  }
+
+    // CONTENT WRAPPER
+    .grid-item__content {
+      text-decoration: none;
+      color: @color-black;
+    }
+
+      // IMAGE WRAPPER
+      .grid-item__image {
+        width: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+
+        &:before {
+          content: " ";
+          float: left;
+          padding-bottom: 56.25%;
+        }
+
+        img {
+          display: none;
+        }
+      }
+
+      // ITEM TITLE
+      .grid-item__title {
+        .open-sans-semi;
+        font-size: @font-size-ms;
+
+        .grid-item--simple & {
+          margin-top: 0;
+
+        }
+      }
+
+      // ITEM ABSTRACT
+      .grid-item__abstract {
+        font-size: @font-size-plus;
+      }

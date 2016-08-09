@@ -1,11 +1,3 @@
-var App = {
-  init: function() {
-    console.log("Hello world");
-
-    Header.init(document.getElementById('site-header'));
-  }
-}
-
 var Header = {
   init: function (el) {
     this.$el = $(el);

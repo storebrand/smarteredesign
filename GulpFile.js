@@ -1,28 +1,41 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+// var sass = require('gulp-sass');
+
+var less = require('gulp-less');
+var path = require('path');
+
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var modernizr = require('gulp-modernizr');
 
 gulp.task('watch', function () {
-  gulp.watch('public/scss/**/*.scss', ['sass']);
-  gulp.watch('public/js/**/*.js', ['compilejs']); //'modernizr'
+  gulp.watch('src/scss/**/*.scss', ['less']);
+  gulp.watch('src/js/**/*.js', ['compilejs']); //'modernizr'
 });
 
-gulp.task('sass', function () {
-  gulp.src('public/scss/style.scss') //'public/src/scss/**/*.scss'
-    .pipe(sass().on('error', sass.logError))
+// gulp.task('sass', function () {
+//   gulp.src('public/scss/style.scss') //'public/src/scss/**/*.scss'
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(gulp.dest('public/css'));
+// });
+
+gulp.task('less', function () {
+  return gulp.src('src/less/style.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ], //path.join(__dirname, 'less', 'includes') //, 'includes'
+      filename: 'style.less',
+    }))
     .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('compilejs', function () {
-    gulp.src('public/js/src/**/*.js', {base: 'public/js/src/'})
+    gulp.src('src/js/**/*.js', {base: 'src/js/'})
       .pipe(concat('main.min.js'))
       .pipe(gulp.dest('public/js/'));
 });
 
 gulp.task('buildjs', function () {
-    gulp.src('public/js/src/**/*.js', {base: 'public/js/src/'})
+    gulp.src('src/js/**/*.js', {base: 'src/js/'})
       .pipe(concat('main.min.js'))
       .pipe(uglify({
            compress: {
@@ -33,7 +46,7 @@ gulp.task('buildjs', function () {
 });
 
 gulp.task('modernizr', function() {
-  gulp.src('public/js/src/**/*.js')
+  gulp.src('src/js/**/*.js')
     .pipe(modernizr({
         // Avoid unnecessary builds (see Caching section below)
         "cache" : true,
@@ -92,6 +105,6 @@ gulp.task('modernizr', function() {
     .pipe(gulp.dest('public/js/'));
 });
 
-gulp.task('build', ['sass', 'buildjs']);
+gulp.task('build', ['less', 'buildjs']);
 
-gulp.task('default', ['sass', 'compilejs', 'watch']);
+gulp.task('default', ['less', 'compilejs', 'watch']);
