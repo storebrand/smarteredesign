@@ -3,8 +3,6 @@ var Header = {
     this.$el = $(el);
     this.$searchField = this.$el.find('#search');
 
-    console.log("init " + this.$searchField.length);
-
     this.$searchField.on('focus', $.proxy(this.onFieldFocus, this));
     this.$searchField.on('blur', $.proxy(this.onFieldBlur, this));
 
