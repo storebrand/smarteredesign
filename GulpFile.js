@@ -9,7 +9,7 @@ var concat = require('gulp-concat');
 var modernizr = require('gulp-modernizr');
 
 gulp.task('watch', function () {
-  gulp.watch('src/scss/**/*.scss', ['less']);
+  gulp.watch('src/less/**/*.less', ['less']);
   gulp.watch('src/js/**/*.js', ['compilejs']); //'modernizr'
 });
 

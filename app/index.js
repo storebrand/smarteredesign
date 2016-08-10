@@ -15,7 +15,7 @@ var env = nunjucks.configure('app/templates', {
 app.get('/', function (req, res) {
     var _this = this;
 
-    var data = {};
+    var data = {type: 'section', id: 'index'};
     res.render('index.html', data);
 
 });
@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 app.get('/article', function (req, res) {
     var _this = this;
 
-    var data = {};
+    var data = {type: 'article'};
     res.render('article.html', data);
 
 });

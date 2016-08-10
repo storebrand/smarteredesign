@@ -1,6 +1,7 @@
-<div class="aside__content">
+<div class="aside__content" id="article-related-content">
   <h2 class="aside__title">Aktuelt</h2>
   <div class="content-list__wrapper">
+    <div class="content-list__fader fader--left"></div>
     <ul class="related-content__list content-list">
       {% for i in range(0,6) %}
       <li class="content-list__item">
@@ -11,5 +12,6 @@
       </li>
       {% endfor %}
     </ul>
+    <div class="content-list__fader fader--right"></div>
   </div>
 </div>

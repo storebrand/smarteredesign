@@ -1,6 +1,5 @@
 var App = {
   init: function(obj) {
-    console.log("Hello world");
 
     if(obj.type) {
       switch (obj.type) {
