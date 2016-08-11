@@ -280,6 +280,7 @@
       display: inline-block;
       vertical-align: top;
       width: 50%;
+      overflow: hidden;
 
       // PREVIOUS
       &.article--prev {
@@ -290,6 +291,7 @@
       &.article--next {
 
       }
+    }
 
       .nav-item__image {
         display: inline-block;
@@ -300,6 +302,10 @@
         background-repeat: no-repeat;
         background-size: cover;
         overflow: hidden;
+
+        .article--next & {
+          float: right;
+        }
 
         &:before {
           content: " ";
@@ -316,6 +322,10 @@
         display: inline-block;
         vertical-align: middle;
         width: calc(100%/3*2);
+
+        .article--next & {
+          text-align: right;
+        }
       }
 
       .nav-item__label {
@@ -330,7 +340,7 @@
         margin: 0.4em 0;
       }
 
-    }
+
 
   // ARTICLE RELATED ITEMS GRID
   // PROBABLY WANT NEED SPECIAL STYLING

@@ -33,18 +33,38 @@
     margin-left: -@grid-padding;
     margin-top: -@grid-padding;
 
+    .section__grid--four & {
+      @media(max-width: @break-point-m) {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media(max-width: @break-point-s) {
+      flex-wrap: wrap;
+    }
+
   }
 
   // GRID ITEM GENERAL STYLES
   .grid-item {
     flex: 0 0 50%;
-    max-width: 50%;
+    // max-width: 50%;
     padding: @grid-padding 0 0 @grid-padding;
     box-sizing: border-box;
 
     .section__grid--four & {
       flex-basis: 25%;
+
+      @media(max-width: @break-point-m) {
+        flex-basis: 50%;
+      }
     }
+
+    @media (max-width: @break-point-s) {
+      flex-basis: 100% !important;
+    }
+
+
   }
 
     // CONTENT WRAPPER
