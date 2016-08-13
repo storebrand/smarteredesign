@@ -1,31 +1,40 @@
 <header class="header" id="site-header">
   <div class="header__row">
-    <h1 class="header__title">Smartere valg</h1>
-    <div class="header__logo">
-      {% include "bits/logo.html" %}
+    <div class="header__row-wrapper">
+      <div class="header__logo header__cell">
+        <a href="/">{% include "bits/logo.html" %}</a>
+      </div>
+      <h1 class="header__title header__cell">
+        <a href="/">
+          <span class="lowercase">Storebrand</span>
+          <span class="uppercase">Smartere valg</span>
+        </a>
+      </h1>
     </div>
   </div>
   <div class="header__row">
-    <div class="header__menu menu">
-      <div class="menu__content">
-        <div class="menu__search">
-          <input type="search" id="search" name="search" value="" placeholder="Søk etter emne..">
-        </div>
-        <div class="menu__navigation">
-          <div class="menu__tags">
-            <ul class="menu__tags-list">
-              <li class="menu__tag"><a href="#">Bærekraft</a></li>
-              <li class="menu__tag"><a href="#">Hus & hage</a></li>
-              <li class="menu__tag"><a href="#">Jordbruk</a></li>
-              <li class="menu__tag"><a href="#">Garasje</a></li>
-              <li class="menu__tag"><a href="#">Buss</a></li>
-            </ul>
+    <div class="header__row-wrapper">
+      <div class="header__menu menu header__cell">
+        <div class="menu__content">
+          <div class="menu__search">
+            <input type="search" id="search" name="search" value="" placeholder="Søk etter emne..">
+          </div>
+          <div class="menu__navigation">
+            <div class="menu__tags">
+              <ul class="menu__tags-list">
+                <li class="menu__tag"><a href="#">Bærekraft</a></li>
+                <li class="menu__tag"><a href="#">Hus & hage</a></li>
+                <li class="menu__tag"><a href="#">Jordbruk</a></li>
+                <li class="menu__tag"><a href="#">Garasje</a></li>
+                <li class="menu__tag"><a href="#">Buss</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="header__info-menu">
-      <a href="#">Om smartere valg</a>
+      <div class="header__info-menu header__cell">
+        <a href="#">Om smartere valg</a>
+      </div>
     </div>
   </div>
 </header>

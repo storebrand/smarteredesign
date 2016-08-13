@@ -1,61 +1,146 @@
-
+// SITE HEADER
 .header {
-
+  border-top: 4px solid @color-profile;
 }
 
-  @menu-row-height: 40px;
+  @menu-row-height: 38px;
+  @menu-row-height-max: 50px;
 
+  //HEADER ROW - THE ENTIRE WIDTH
   .header__row {
-    display: table;
-    width: 100%;
-
-    &:first-child {
-      border-bottom: 1px solid @color-grey;
-    }
+    border-bottom: 1px solid @color-grey;
   }
 
+    // WRAPPER CONSTRAINING CONTENT TO DEFINED MAX-WIDTH
+    .header__row-wrapper {
+      display: flex;
+      flex-flow: row nowrap;
+      .restrain;
+
+      //SPECIAL CASE FOR UPPER ROW, SINCE LOGO SWITCHES PLACE
+      //DEPENDING ON SCREEN SIZE
+      .header__row:first-child & {
+        display: block;
+        @media (min-width: @break-point-s) {
+          display: flex;
+          flex-flow: row-reverse nowrap;
+        }
+      }
+
+    }
+
+    //HEADER CELL GENERAL STYLES
+    .header__cell {
+      flex: 1 auto;
+      padding: 12px;
+      box-sizing: border-box;
+
+      @media (min-width: @break-point-s) {
+        padding: 16px;
+      }
+    }
+
+    //HEADER TITLE (CELL)
     .header__title {
-      display: table-cell;
-      vertical-align: middle;
-      width: 80%;
+      margin: 0;
+      width: 88%;
       .signa-light;
       font-size: @font-size-plus;
-      line-height: 1.5em;
-      color: @color-profile;
-      text-transform: uppercase;
+      line-height: 1em;
+
+      @media (max-width: @break-point-s-min) {
+        display: block;
+        width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .lowercase {
+        color: @color-grey-dark;
+      }
+
+      .uppercase {
+        text-transform: uppercase;
+        color: @color-profile;
+      }
+
     }
 
+    //HEADER LOGO (CELL)
     .header__logo {
-      display: table-cell;
-      vertical-align: middle;
-      width: 20%;
+      text-align: right;
+      width: 12%;
+      min-width: 170px;
+      box-sizing: border-box;
+      font: 0/0 a;
+
+      @media (max-width: @break-point-s-min) {
+        display: block;
+        width: 100%;
+      }
+
+      @media (min-width: @break-point-s) {
+        // float: right;
+      }
+
+      svg {
+        height: 12px;
+
+        @media (min-width: @break-point-s) {
+          height: 16px;
+        }
+      }
     }
 
+    //HEADER MENU INCLUDING SEARCH (CELL)
     .header__menu {
-      display: table-cell;
-      vertical-align: middle;
-      width: 80%;
+      width: 88%;
+      vertical-align: top;
       border-right: 1px solid @color-grey;
+      padding: 0;
+
+      // @media (min-width: @break-point-s) {
+      //   width: 88%;
+      // }
     }
 
+      //CONTENT WRAPPER
       .menu__content {
         position: relative;
         height: @menu-row-height;
         overflow: hidden;
+
+        @media (min-width: @break-point-s) {
+          height: @menu-row-height-max;
+        }
 
         .menu--open & {
           overflow: visible;
         }
       }
 
+        //THE SEARCH FIELD WRAPPER
         .menu__search {
 
           input {
             width: 100%;
             border: none;
+            height: @menu-row-height;
+            box-sizing: border-box;
+            .open-sans-light;
+            font-size: @font-size-s;
+            padding-left: 20px;
+
+            @media (min-width: @break-point-s) {
+              height: @menu-row-height-max;
+              font-size: @font-size;
+            }
           }
         }
 
+        //NAVIGATION MENU THAT OPENS ON USER INTERACTION
         .menu__navigation {
           border-top: 1px solid @color-grey;
           background-color: @color-white;
@@ -65,11 +150,16 @@
           left: 0;
           width: 100%;
 
+          @media (min-width: @break-point-s) {
+            top: @menu-row-height-max;
+          }
+
           .menu--open & {
             width: 100vw;
           }
         }
 
+          // THE MENU CATEGORY TAGS
           .menu__tags {
 
           }
@@ -88,12 +178,29 @@
                 }
               }
 
+    //HEADER INFO MENU (CELL)
     .header__info-menu {
-      display: table-cell;
-      vertical-align: middle;
-      width: 20%;
+      text-align: right;
+      vertical-align: top;
+      min-width: 144px;
+      white-space: nowrap;
+      box-sizing: border-box;
+      padding-top: 9px;
+      padding-bottom: 9px;
+
+      @media (min-width: @break-point-s) {
+        width: 12%;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        min-width: 170px;
+      }
 
       a {
+        .menu-link;
+        font-size: @font-size-s;
 
+        @media (min-width: @break-point-s) {
+          font-size: @font-size;
+        }
       }
     }

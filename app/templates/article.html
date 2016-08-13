@@ -57,43 +57,49 @@
   </div>
 </article>
   <nav class="article__nav" role="navigation">
-    <div class="article__nav-item nav-item article--prev">
-      <div class="nav-item__image" style="background-image: url('images/unsplash01.jpg')">
-        <img src="images/unsplash01.jpg" alt="blåbær!" />
+    <div class="article__nav-wrapper">
+      <div class="article__nav-item nav-item article--prev">
+        <div class="nav-item__image" style="background-image: url('images/unsplash01.jpg')">
+          <img src="images/unsplash01.jpg" alt="blåbær!" />
+        </div>
+        <div class="nav-item__info">
+          <div class="nav-item__label">Forrige</div>
+          <h4 class="nav-item__title">Teknologi-optimisme</h4>
+        </div>
       </div>
-      <div class="nav-item__info">
-        <div class="nav-item__label">Forrige</div>
-        <h4 class="nav-item__title">Teknologi-optimisme</h4>
-      </div>
-    </div>
-    <div class="article__nav-item nav-item article--next">
-      <div class="nav-item__image" style="background-image: url('images/unsplash01.jpg')">
-        <img src="images/unsplash01.jpg" alt="blåbær!" />
-      </div>
-      <div class="nav-item__info">
-        <div class="nav-item__label">Neste</div>
-        <h4 class="nav-item__title">Teknologi-optimisme</h4>
+      <div class="article__nav-item nav-item article--next">
+        <div class="nav-item__image" style="background-image: url('images/unsplash01.jpg')">
+          <img src="images/unsplash01.jpg" alt="blåbær!" />
+        </div>
+        <div class="nav-item__info">
+          <div class="nav-item__label">Neste</div>
+          <h4 class="nav-item__title">Teknologi-optimisme</h4>
+        </div>
       </div>
     </div>
   </nav>
-  <section class="article__related-items section__grid section__grid--two">
-    <h4 class="section__grid-title">Flere reportasjer</h4>
+  <section class="article__related-items section-grid section-grid--two">
+    <div class="section-grid__wrapper">
+      <h4 class="section-grid__title">Flere reportasjer</h4>
 
-    <div class="section__grid-content">
-      {% for i in range(0,2) %}
-        {% include "bits/grid-item.html" %}
-      {% endfor %}
-    </div>
+      <div class="section-grid__content">
+        {% for i in range(0,2) %}
+          {% include "bits/grid-item.html" %}
+        {% endfor %}
+      </div>
 
+      </div>
     </div>
   </section>
-  <div class="article__related-items section__grid section__grid--four">
-    <h4 class="section__grid-title">Relevante artikler</h4>
+  <div class="article__related-items section-grid section-grid--four">
+    <div class="section-grid__wrapper">
+      <h4 class="section-grid__title">Relevante artikler</h4>
 
-    <div class="section__grid-content">
-      {% for i in range(0,4) %}
-        {% include "bits/grid-item-simple.html" %}
-      {% endfor %}
+      <div class="section-grid__content">
+        {% for i in range(0,4) %}
+          {% include "bits/grid-item-simple.html" %}
+        {% endfor %}
+      </div>
     </div>
 
   </div>
