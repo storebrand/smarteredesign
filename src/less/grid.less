@@ -1,5 +1,5 @@
 
-@grid-padding: 3rem;
+@grid-padding: 2rem;
 
 // SECTION GRID
 .section-grid {
@@ -26,7 +26,7 @@
     .open-sans;
     text-transform: uppercase;
     font-size: @font-size-s;
-    margin: 2rem 0;
+    margin: 2rem 2rem 1rem 2rem;
   }
 
   // THE ACTUAL GRID WITH FLEX FUNC.
@@ -34,8 +34,8 @@
     display: flex;
     flex-flow: row;
     margin: 0;
-    margin-left: -@grid-padding;
-    margin-top: -@grid-padding;
+    // margin-left: -(@grid-padding/2);
+    // margin-top: -(@grid-padding/2);
 
     .section-grid--four & {
       @media(max-width: @break-point-m) {
@@ -53,7 +53,7 @@
   .grid-item {
     flex: 0 0 50%;
     // max-width: 50%;
-    padding: @grid-padding 0 0 @grid-padding;
+    padding: @grid-padding/2 @grid-padding; // 0 0 @grid-padding;
     box-sizing: border-box;
 
     .section-grid--four & {
@@ -73,6 +73,7 @@
 
     // CONTENT WRAPPER
     .grid-item__content {
+      display: block;
       text-decoration: none;
       color: @color-black;
     }
@@ -100,6 +101,7 @@
       .grid-item__title {
         .open-sans-semi;
         font-size: @font-size-ms;
+        color: @color-profile;
 
         .grid-item--simple & {
           margin-top: 0;

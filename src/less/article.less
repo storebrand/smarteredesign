@@ -26,7 +26,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 32px 0;
+    padding: 2rem 0;
 
     color: @color-white;
     text-align: center;
@@ -67,7 +67,7 @@
       // ASIDE CONTENT
       .aside__content {
         position: relative;
-        padding: 64px 9%;
+        padding: 4rem 9%;
       }
 
       .aside--hidden {
@@ -76,7 +76,7 @@
 
         .aside__toggle-button {
           position: absolute;
-          top: 16px;
+          top: 1rem;
           border: 1px solid @color-grey;
           display: block;
           right: -1px;
@@ -194,7 +194,7 @@
 
     // ARTICLE CONTENT EXCLUDING ASIDE CONTENT
     .article__content {
-      padding: 64px 0 32px 0;
+      padding: 4rem 0 2rem 0;
       @media (min-width: @break-point-m) {
         display: table-cell;
         vertical-align: top;
@@ -231,7 +231,7 @@
           vertical-align: top;
           width: 40%;
           text-align: right;
-          padding: 8px 32px;
+          padding: 8px 2rem;
           box-sizing: border-box;
         }
 
@@ -241,7 +241,7 @@
           vertical-align: top;
           width: 60%;
           border-left: 1px solid @color-grey;
-          padding: 8px 32px;
+          padding: 8px 2rem;
           box-sizing: border-box;
 
         }
@@ -320,7 +320,7 @@
 
           // THE SOURCE OF THE QUOTE
           .article__quote-source {
-            margin: 1em 32px 1em 0;
+            margin: 1em 2rem 1em 0;
             text-align: right;
           }
 
@@ -361,20 +361,24 @@
   .article__nav {
     font-size: 0;
     border-top: 1px solid @color-grey;
-    padding: 1rem;
+    padding: 2rem;
   }
 
 
     .article__nav-wrapper {
       .restrain;
+      display: flex;
     }
 
     // ARTICLE NAVIGATION ITEM
     .article__nav-item {
-      display: inline-block;
-      vertical-align: top;
+      flex: 0 0 50%;
       width: 50%;
       overflow: hidden;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      text-decoration: none;
 
       // PREVIOUS
       &.article--prev {
@@ -383,13 +387,12 @@
 
       // NEXT
       &.article--next {
-
+        flex-flow: row-reverse;
       }
     }
 
       .nav-item__image {
-        display: inline-block;
-        vertical-align: middle;
+        flex: 0 0 calc(100%/3);
         width: calc(100%/3);
 
         background-position: 50% 50%;
@@ -398,7 +401,7 @@
         overflow: hidden;
 
         .article--next & {
-          float: right;
+          // float: right;
         }
 
         &:before {
@@ -413,9 +416,10 @@
       }
 
       .nav-item__info {
-        display: inline-block;
-        vertical-align: middle;
+        flex: 0 0 calc(100%/3*2);
         width: calc(100%/3*2);
+        box-sizing: border-box;
+        padding: 0 2rem;
 
         .article--next & {
           text-align: right;
@@ -431,7 +435,8 @@
 
       .nav-item__title {
         font-size: @font-size-plus;
-        margin: 0.4em 0;
+        margin: 0.2em 0;
+        color: @color-profile;
       }
 
 
