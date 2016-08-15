@@ -86,6 +86,10 @@ body {
 }
 .header {
   border-top: 4px solid #bb1b18;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+  background-color: #FFF;
 }
 .header__row {
   border-bottom: 1px solid #e6e6e6;
@@ -267,6 +271,9 @@ body {
   .header__info-menu a {
     font-size: 16px;
   }
+}
+.main {
+  padding-top: 106px;
 }
 .article__header {
   position: relative;

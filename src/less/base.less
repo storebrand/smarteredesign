@@ -1,6 +1,10 @@
 // SITE HEADER
 .header {
   border-top: 4px solid @color-profile;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+  background-color: @color-white;
 }
 
   @menu-row-height: 38px;
@@ -213,3 +217,7 @@
         }
       }
     }
+
+.main {
+  padding-top: @header-height;
+}
