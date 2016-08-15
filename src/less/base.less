@@ -127,6 +127,15 @@
 
         //THE SEARCH FIELD WRAPPER
         .menu__search {
+          .icon {
+            font-size: 2rem;
+            color: @color-grey-text;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: 1rem;
+            z-index: 2;
+          }
 
           input {
             width: 100%;
@@ -135,7 +144,7 @@
             box-sizing: border-box;
             .open-sans-light;
             font-size: @font-size-s;
-            padding-left: 20px;
+            padding-left: 3rem;
 
             @media (min-width: @break-point-s) {
               height: @menu-row-height-max;

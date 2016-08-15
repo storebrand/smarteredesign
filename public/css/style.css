@@ -186,6 +186,15 @@ body {
 .menu--open .menu__content {
   overflow: visible;
 }
+.menu__search .icon {
+  font-size: 2rem;
+  color: #404040;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 1rem;
+  z-index: 2;
+}
 .menu__search input {
   width: 100%;
   border: none;
@@ -194,7 +203,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 0.9375rem;
-  padding-left: 20px;
+  padding-left: 3rem;
 }
 @media (min-width: 480px) {
   .menu__search input {
@@ -459,6 +468,7 @@ body {
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
   font-size: 0;
+  color: #404040;
 }
 .article__meta-length {
   display: inline-block;
@@ -479,13 +489,16 @@ body {
 .article__meta-icons {
   display: inline-block;
   vertical-align: middle;
+  font-size: 2rem;
+  box-sizing: border-box;
+  padding: 0 1rem;
 }
 .article__meta-label {
   display: inline-block;
   vertical-align: middle;
   font-size: 0.8125rem;
   text-transform: uppercase;
-  line-height: 1.4em;
+  line-height: 1.2em;
   text-align: left;
 }
 .article__body-text p {
