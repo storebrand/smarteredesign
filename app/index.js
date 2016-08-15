@@ -20,6 +20,14 @@ app.get('/', function (req, res) {
 
 });
 
+app.get('/report', function (req, res) {
+    var _this = this;
+
+    var data = {type: 'report'};
+    res.render('report.html', data);
+
+});
+
 app.get('/article', function (req, res) {
     var _this = this;
 

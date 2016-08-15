@@ -8,6 +8,7 @@ var App = {
     if(obj.type) {
       switch (obj.type) {
         case "article":
+        case "report":
           ArticleView.init(document.getElementById('article'));
           break;
         default:

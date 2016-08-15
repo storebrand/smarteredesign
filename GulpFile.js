@@ -30,22 +30,34 @@ gulp.task('browserify', function () {
         .pipe(gulp.dest('public/js'));
 });
 
+gulp.task('browserify-build', function () {
+    gulp.src('src/js/main.js')
+        .pipe(browserify())
+        .pipe(concat('main.min.js'))
+        .pipe(uglify({
+             compress: {
+               drop_console: true
+             }
+           }))
+        .pipe(gulp.dest('public/js'));
+});
+
 // gulp.task('compilejs', function () {
 //     gulp.src('src/js/**/*.js', {base: 'src/js/'})
 //       .pipe(concat('main.min.js'))
 //       .pipe(gulp.dest('public/js/'));
 // });
 
-gulp.task('buildjs', function () {
-    gulp.src('src/js/**/*.js', {base: 'src/js/'})
-      .pipe(concat('main.min.js'))
-      .pipe(uglify({
-           compress: {
-             drop_console: true
-           }
-         }))
-      .pipe(gulp.dest('public/js/'));
-});
+// gulp.task('buildjs', function () {
+//     gulp.src('src/js/**/*.js', {base: 'src/js/'})
+//       .pipe(concat('main.min.js'))
+//       .pipe(uglify({
+//            compress: {
+//              drop_console: true
+//            }
+//          }))
+//       .pipe(gulp.dest('public/js/'));
+// });
 
 gulp.task('modernizr', function() {
   gulp.src('src/js/**/*.js')
@@ -107,6 +119,6 @@ gulp.task('modernizr', function() {
     .pipe(gulp.dest('public/js/'));
 });
 
-gulp.task('build', ['less', 'buildjs']);
+gulp.task('build', ['less', 'browserify-build']);
 
 gulp.task('default', ['less', 'browserify', 'watch']);
