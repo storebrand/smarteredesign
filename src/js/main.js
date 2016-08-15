@@ -1,3 +1,6 @@
+var ArticleView = require('./views/article');
+var Header = require('./views/header');
+
 var App = {
   init: function(obj) {
     console.log("Hello world");
@@ -15,3 +18,7 @@ var App = {
     Header.init(document.getElementById('site-header'));
   }
 }
+
+module.exports = App;
+
+App.init(window.pageObject);

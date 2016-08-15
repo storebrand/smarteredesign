@@ -16631,9 +16631,7 @@ var App = {
   }
 }
 
-module.exports = App;
-
-App.init(window.pageObject);
+App.init();
 
 },{"./views/article":4,"./views/header":5}],3:[function(require,module,exports){
 var _ = require('lodash');
@@ -16643,18 +16641,6 @@ var ArticleRelatedContent = {
     this.el = el;
     this.$el = $(el);
 
-    if(window.matchMedia && window.matchMedia("(max-width: 767px)").matches) {
-      this.setupMobileScroll();
-    }
-
-    this.$showButton = this.$el.find("#open-button");
-    this.$showButton.click(_.bind(this.onCloseClick, this));
-    this.$hideButton = this.$el.find("#close-button");
-    this.$hideButton.click(_.bind(this.onCloseClick, this));
-
-  },
-
-  setupMobileScroll: function() {
     var $faderLeft = this.$el.find(".fader--left")
     var $faderRight = this.$el.find(".fader--right")
     this.$scrollContent = this.$el.find(".related-content__list");
@@ -16663,29 +16649,17 @@ var ArticleRelatedContent = {
       $faderLeft.css('opacity', Math.min(1, $(this).scrollLeft()/100));
       $faderRight.css('opacity', Math.min(1, (scrollWidth - $(this).scrollLeft())/100));
     });
+
+    var $closeButton = this.$el.find("#close-button");
+    $closeButton.click(_.bind(this, this.onCloseClick));
+
   },
 
-  onCloseClick: function (e) {
-    e.preventDefault();
-    var _this = this;
+  onCloseClick: function () {
 
-    if(!this.$el.hasClass("aside--hidden")) {
-      this.w = this.$el.width();
-      this.$el.addClass("aside--hidden");
-      this.$el.animate({width: '1%'}, 200, "linear", function () {
-        _this.$showButton.show();
-        _this.$showButton.animate({right: -(_this.$showButton.width())}, 150);
-      });
-    } else {
-      this.$showButton.hide();
-      this.$hideButton.show();
-      this.$el.animate({width: '20%'}, 200, "linear", function () {
-
-        _this.$el.removeClass("aside--hidden");
-      });
-    }
   }
 }
+
 
 module.exports = ArticleRelatedContent;
 
@@ -16694,12 +16668,14 @@ var ArticleRelatedContent = require('./article-relatedcontent');
 
 var ArticleView = {
   init: function (el) {
-
     this.el = el;
     this.$el = $(el);
 
     if(this.$el.find(".article__aside")) {
-      ArticleRelatedContent.init(document.getElementById('article-related-content'));
+
+      if(window.matchMedia && window.matchMedia("(max-width: 767px)").matches) {
+        ArticleRelatedContent.init(document.getElementById('article-related-content'))
+      }
     }
   }
 }

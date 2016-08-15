@@ -19,11 +19,17 @@
     </main>
 
     {% include "bits/footer.html" %}
-    <script src="js/main.min.js" charset="utf-8"></script>
     <script type="text/javascript">
+      var pageObject = {
+        type: '{{type}}',
+        id: '{{id}}'
+      }
+    </script>
+    <script src="js/main.min.js" charset="utf-8"></script>
+    <!--script type="text/javascript">
       (function() {
         App.init({type: '{{type}}', id: '{{id}}'});
       })();
-    </script>
+    </script-->
   </body>
 </html>

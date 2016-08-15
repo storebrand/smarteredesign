@@ -19,3 +19,5 @@ var Header = {
     this.$menu.removeClass('menu--open');
   }
 }
+
+module.exports = Header;
