@@ -58,7 +58,7 @@
         display: table-cell;
         vertical-align: top;
         border-right: 1px solid @color-grey;
-        width: 20%;
+        width: 30%;
         // min-width: 200px;
       }
 
@@ -67,7 +67,7 @@
       // ASIDE CONTENT
       .aside__content {
         position: relative;
-        padding-top: 40px;
+        padding: 64px 9%;
       }
 
       .aside--hidden {
@@ -76,7 +76,7 @@
 
         .aside__toggle-button {
           position: absolute;
-          top: 10px;
+          top: 16px;
           border: 1px solid @color-grey;
           display: block;
           right: -1px;
@@ -187,49 +187,93 @@
 
             .content-list__item-title {
               white-space: normal;
+              margin: 1em 0 2em 0;
             }
 
 
 
     // ARTICLE CONTENT EXCLUDING ASIDE CONTENT
     .article__content {
-      padding: 16px 4% 32px 8%;
+      padding: 64px 0 32px 0;
       @media (min-width: @break-point-m) {
         display: table-cell;
         vertical-align: top;
-        width: 80%;
+        width: 70%;
       }
+
     }
+
+    @padding-left-default-ls: 12%;
+    @padding-right-default-ls: 20%;
+    @padding-left-min-ls: 6%;
+    @padding-right-min-ls: 10%;
 
       // ARTICLE ABSTRACT / SUMMARY
       .article__abstract {
+        font-size: @font-size-ms;
+        line-height: 1.5em;
 
+        p {
+          margin: 1em @padding-right-default-ls 2em @padding-left-default-ls;
+        }
       }
 
       // META META LIKE ARTICLE INFO AND SHARING
       .article__meta {
-
+        border-top: 1px solid @color-grey;
+        border-bottom: 1px solid @color-grey;
+        font-size: 0;
       }
 
         // ARTICLE LENGTH INDICATOR
         .article__meta-length {
-
+          display: inline-block;
+          vertical-align: top;
+          width: 40%;
+          text-align: right;
+          padding: 8px 32px;
+          box-sizing: border-box;
         }
 
         // ARTICLE SHARE MODULE
         .article__share {
+          display: inline-block;
+          vertical-align: top;
+          width: 60%;
+          border-left: 1px solid @color-grey;
+          padding: 8px 32px;
+          box-sizing: border-box;
 
         }
+
+          .article__meta-icons {
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          .article__meta-label {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: @font-size-xs;
+            text-transform: uppercase;
+            line-height: 1.4em;
+            text-align: left;
+          }
 
         // ARTICLE BODY TEXT INCL. SIMPLE PARAGRAPHS
         // AND COMPLEX MODULES
         .article__body-text {
-          h3 {
-
-          }
 
           p {
+            margin: 1em @padding-right-default-ls 2em @padding-left-default-ls;
 
+            &:first-child {
+              margin-top: 2em;
+            }
+          }
+
+          h3 {
+            margin: 2em @padding-right-default-ls 1em @padding-left-default-ls;
           }
 
           a {
@@ -247,7 +291,7 @@
 
           // BODY IMAGE MODULE
           .article__body-image {
-            margin: 2rem 0;
+            margin: 1em @padding-right-min-ls 1em @padding-left-min-ls;
 
             img {
               width: 100%;
@@ -257,24 +301,27 @@
             figcaption {
               font-size: @font-size-xs;
               font-style: italic;
-              border-bottom: 1px solid @color-black;
+              border-bottom: 1px solid @color-grey;
               padding-bottom: 5px;
             }
           }
 
         // ARTICLE QUOTE MODULE
         .article__quote-wrapper {
-
+          margin: 3em @padding-right-min-ls 3em @padding-left-min-ls;
         }
 
           // THE QUOTE TEXT
           .article__quote {
-
+            font-size: @font-size-ml;
+            line-height: 1.25em;
+            margin: 0;
           }
 
           // THE SOURCE OF THE QUOTE
           .article__quote-source {
-
+            margin: 1em 32px 1em 0;
+            text-align: right;
           }
 
 
@@ -283,11 +330,15 @@
 
         }
 
-
+  // ARTICLE PUBLISHED DATE
+  .article__published {
+    margin: 1em @padding-right-default-ls 1em @padding-left-default-ls;
+    color: @color-grey-text;
+  }
 
   // TAGS WRAPPER - USED BOTH IN HEADER AND BODY TEXT
   .article__tags {
-
+    margin: 2em @padding-right-default-ls 1em @padding-left-default-ls;
   }
 
     // ARTICLE TAG

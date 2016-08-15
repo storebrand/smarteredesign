@@ -314,16 +314,16 @@ body {
     display: table-cell;
     vertical-align: top;
     border-right: 1px solid #e6e6e6;
-    width: 20%;
+    width: 30%;
   }
 }
 .aside__content {
   position: relative;
-  padding-top: 40px;
+  padding: 64px 9%;
 }
 .aside__toggle-button {
   position: absolute;
-  top: 10px;
+  top: 16px;
   border: 1px solid #e6e6e6;
   display: block;
   right: -1px;
@@ -429,19 +429,69 @@ body {
 }
 .content-list__item-title {
   white-space: normal;
+  margin: 1em 0 2em 0;
 }
 .article__content {
-  padding: 16px 4% 32px 8%;
+  padding: 64px 0 32px 0;
 }
 @media (min-width: 768px) {
   .article__content {
     display: table-cell;
     vertical-align: top;
-    width: 80%;
+    width: 70%;
   }
 }
+.article__abstract {
+  font-size: 1.375rem;
+  line-height: 1.5em;
+}
+.article__abstract p {
+  margin: 1em 20% 2em 12%;
+}
+.article__meta {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 0;
+}
+.article__meta-length {
+  display: inline-block;
+  vertical-align: top;
+  width: 40%;
+  text-align: right;
+  padding: 8px 32px;
+  box-sizing: border-box;
+}
+.article__share {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+  border-left: 1px solid #e6e6e6;
+  padding: 8px 32px;
+  box-sizing: border-box;
+}
+.article__meta-icons {
+  display: inline-block;
+  vertical-align: middle;
+}
+.article__meta-label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  line-height: 1.4em;
+  text-align: left;
+}
+.article__body-text p {
+  margin: 1em 20% 2em 12%;
+}
+.article__body-text p:first-child {
+  margin-top: 2em;
+}
+.article__body-text h3 {
+  margin: 2em 20% 1em 12%;
+}
 .article__body-image {
-  margin: 2rem 0;
+  margin: 1em 10% 1em 6%;
 }
 .article__body-image img {
   width: 100%;
@@ -450,8 +500,27 @@ body {
 .article__body-image figcaption {
   font-size: 0.8125rem;
   font-style: italic;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #e6e6e6;
   padding-bottom: 5px;
+}
+.article__quote-wrapper {
+  margin: 3em 10% 3em 6%;
+}
+.article__quote {
+  font-size: 2rem;
+  line-height: 1.25em;
+  margin: 0;
+}
+.article__quote-source {
+  margin: 1em 32px 1em 0;
+  text-align: right;
+}
+.article__published {
+  margin: 1em 20% 1em 12%;
+  color: #404040;
+}
+.article__tags {
+  margin: 2em 20% 1em 12%;
 }
 .article__tag {
   display: inline-block;
