@@ -2,40 +2,29 @@
 
 {% block content %}
 <article class="article" id="article">
-  <header class="article__header">
-    <img class="article__header-image" src="images/unsplash02.jpg" alt="Jordbær er kjempegodt!" />
-    <div class="article__header-content">
-      <div class="article__tags">
-        <span class="article__tag">Miljø</span>
-        <span class="article__tag">Mat</span>
-      </div>
-      <h1 class="article__title">Hvorfor velge økologisk mat?</h1>
-      <div class="article__author">Av Hilde Stray Due</div>
-    </div>
-  </header>
+
   <div class="article__body">
 
     {% include "bits/article_aside.html" %}
 
     <div class="article__content">
+      <header class="article__header">
+        <div class="article__featured-image-wrapper">
+            <img class="article__featured-image" src="images/unsplash02.jpg" alt="Jordbær er kjempegodt!" />
+        </div>
+        <div class="article__header-content">
+          <div class="article__tags">
+            <span class="article__tag">Miljø</span>
+            <span class="article__tag">Mat</span>
+          </div>
+          <h1 class="article__title">Hvorfor velge økologisk mat?</h1>
+          <div class="article__author">Av Hilde Stray Due</div>
+        </div>
+      </header>
       <div class="article__abstract">
         <p>Å velge økologisk mat burde være et selvsagt valg for alle. Selv om både etterspørsel og produksjon av økologisk mat i Norge har økt de siste årene, så er det fremdeles behov for å ha fokus på naturlig produksjon.</p>
       </div>
-      <div class="article__meta">
-        <div class="article__meta-length">
-          <div class="article__meta-icons">O</div>
-          <div class="article__meta-label">
-            <div>Reportasje</div>
-            <div>11 min.</div>
-          </div>
-        </div>
-        <div class="article__share">
-          <div class="article__meta-label">
-            <div>Del<br>artikkel</div>
-          </div>
-          <div class="article__meta-icons">O</div>
-        </div>
-      </div>
+      {% include 'bits/article-meta.html' %}
       <div class="article__body-text">
         <p>Det er gjort få undersøkelser der man har sammenliknet innholdet i økologisk og konvensjonelt produsert mat. Eksisterende litteratur gir oss få holdepunkter for å kunne konkludere med sikkerhet hvilke forskjeller som eksisterer i innhold av næringsstoffer. Problemet er at de to produksjonssystemene varierer fra land til land og over tid. Dessuten vil næringsinnholdet i en bestemt matplante variere etter modningsgrad, jordsmonn og klima.</p>
         <h3>Næringsinnhold i økologiske matvarer</h3>

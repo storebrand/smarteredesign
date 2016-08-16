@@ -1,3 +1,8 @@
+@padding-left-default-ls: 12%;
+@padding-right-default-ls: 20%;
+@padding-left-min-ls: 6%;
+@padding-right-min-ls: 10%;
+
 .article {
 
 }
@@ -7,8 +12,15 @@
   position: relative;
 }
 
+  .article__featured-image-wrapper {
+    margin: 0 @padding-right-min-ls 2rem @padding-left-min-ls;
+    .article--report & {
+      margin: 0;
+    }
+  }
+
   // HEADER IMAGE
-  .article__header-image {
+  .article__featured-image {
     width: 100%;
     height: auto;
     position: relative;
@@ -17,32 +29,47 @@
 
   // CONTENT WRAPPER
   .article__header-content {
-    // background-color: rgba(0,0,0,0.4);
+    margin: 0 @padding-right-default-ls 0 @padding-left-default-ls;
 
-    .vertical-gradient;
+    .article--report & {
+      .vertical-gradient;
+      margin: 0;
 
-    position: absolute;
-    z-index: 2;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 0;
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 2rem 0;
 
-    color: @color-white;
-    text-align: center;
+      color: @color-white;
+      text-align: center;
+    }
+
   }
 
     // THE ARTICLE TITLE
     .article__title {
       .signa-light;
       line-height: 1.2em;
-      font-size: @font-size-xl;
-      margin: 0.6em 0;
+      font-size: @font-size-l;
+      margin: 0.6em 0 0.2em 0;
+
+      .article--report & {
+        font-size: @font-size-xl;
+        margin: 0.6em 0;
+      }
+
+
     }
 
     // THE ARTICLE AUTHOR
     .article__author {
+      color: @color-profile;
 
+      .article--report & {
+        color: @color-white;
+      }
     }
 
   // MOST OF THE ARTICLE, EXCEPT HEADER AND FOOTER
@@ -203,10 +230,6 @@
 
     }
 
-    @padding-left-default-ls: 12%;
-    @padding-right-default-ls: 20%;
-    @padding-left-min-ls: 6%;
-    @padding-right-min-ls: 10%;
 
       // ARTICLE ABSTRACT / SUMMARY
       .article__abstract {
@@ -343,6 +366,10 @@
   // TAGS WRAPPER - USED BOTH IN HEADER AND BODY TEXT
   .article__tags {
     margin: 2em @padding-right-default-ls 1em @padding-left-default-ls;
+
+    .article__header & {
+      margin: 0;
+    }
   }
 
     // ARTICLE TAG
@@ -356,6 +383,11 @@
       font-size: @font-size-xs;
 
       .article__header & {
+        color: @color-grey-text;
+        border-color: @color-grey-text;
+      }
+
+      .article--report .article__header & {
         color: @color-white;
         border-color: @color-white;
       }
