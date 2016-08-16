@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var $ = require('jquery');
 
 var ArticleRelatedContent = {
   init: function (el) {

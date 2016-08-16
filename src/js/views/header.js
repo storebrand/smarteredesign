@@ -1,3 +1,5 @@
+var $ = require('jquery');
+
 var Header = {
   init: function (el) {
     this.$el = $(el);

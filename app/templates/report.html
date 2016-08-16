@@ -3,7 +3,7 @@
 {% block content %}
 <article class="article article--report" id="article">
   <header class="article__header">
-    <img class="article__header-image" src="images/unsplash02.jpg" alt="Jordbær er kjempegodt!" />
+    <img class="article__featured-image" src="images/unsplash02.jpg" alt="Jordbær er kjempegodt!" />
     <div class="article__header-content">
       <div class="article__tags">
         <span class="article__tag">Miljø</span>
@@ -91,7 +91,7 @@
       </div>
     </div>
   </section>
-  <div class="article__related-items section-grid section-grid--four">
+  <section class="article__related-items section-grid section-grid--four">
     <div class="section-grid__wrapper">
       <h4 class="section-grid__title">Relevante artikler</h4>
 
@@ -101,7 +101,6 @@
         {% endfor %}
       </div>
     </div>
-
-  </div>
+  </section>
 
 {% endblock %}
