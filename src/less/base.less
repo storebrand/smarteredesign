@@ -4,7 +4,6 @@
   position: fixed;
   width: 100vw;
   z-index: 100;
-  background-color: @color-white;
 }
 
   @menu-row-height: 38px;
@@ -13,6 +12,22 @@
   //HEADER ROW - THE ENTIRE WIDTH
   .header__row {
     border-bottom: 1px solid @color-grey;
+    background-color: @color-white;
+    position: relative;
+    z-index: 2;
+  }
+
+  .header__row--menu {
+    z-index: 1;
+
+    transition: transform 200ms linear;
+    transform: translate(0,-100%);
+
+    .menu--open & {
+      transform: translate(0,0);
+      transition: transform 200ms linear;
+      display: block;
+    }
   }
 
     // WRAPPER CONSTRAINING CONTENT TO DEFINED MAX-WIDTH
@@ -20,6 +35,8 @@
       display: flex;
       flex-flow: row nowrap;
       .restrain;
+      padding: 0 2rem;
+      box-sizing: border-box;
 
       //SPECIAL CASE FOR UPPER ROW, SINCE LOGO SWITCHES PLACE
       //DEPENDING ON SCREEN SIZE
@@ -36,11 +53,11 @@
     //HEADER CELL GENERAL STYLES
     .header__cell {
       flex: 1 auto;
-      padding: 12px;
+      padding: 12px 0;
       box-sizing: border-box;
 
       @media (min-width: @break-point-s) {
-        padding: 16px;
+        padding: 16px 0;
       }
     }
 
@@ -99,7 +116,7 @@
     }
 
     //HEADER MENU INCLUDING SEARCH (CELL)
-    .header__menu {
+    .header__filters {
       width: 88%;
       vertical-align: top;
       border-right: 1px solid @color-grey;
@@ -111,31 +128,52 @@
     }
 
       //CONTENT WRAPPER
-      .menu__content {
+      .filters__content {
         position: relative;
-        height: @menu-row-height;
-        overflow: hidden;
+        display: flex;
+        align-items: center;
+        // height: @menu-row-height;
 
-        @media (min-width: @break-point-s) {
-          height: @menu-row-height-max;
-        }
 
-        .menu--open & {
-          overflow: visible;
-        }
+        // @media (min-width: @break-point-s) {
+        //   height: @menu-row-height-max;
+        // }
       }
 
         //THE SEARCH FIELD WRAPPER
-        .menu__search {
+        .filters__search {
+          flex: 0 0 75%;
+          border-right: 1px solid @color-grey;
+
           .icon {
             font-size: 2rem;
             color: @color-grey-text;
             position: absolute;
             top: 50%;
             transform: translate(0, -50%);
-            left: 1rem;
+            left: 0;
             z-index: 2;
           }
+
+          .icon-icon_menu-search {
+            .menu--open & {
+              display: none;
+            }
+          }
+
+          .article-page &, .report-page & {
+            flex: 0 0 100%;
+            border-right: none;
+          }
+
+          .icon-icon_close {
+            display: none;
+
+            .menu--open & {
+              display: block;
+            }
+          }
+
 
           input {
             width: 100%;
@@ -144,7 +182,8 @@
             box-sizing: border-box;
             .open-sans-light;
             font-size: @font-size-s;
-            padding-left: 3rem;
+            padding-left: 2rem;
+            outline: none;
 
             @media (min-width: @break-point-s) {
               height: @menu-row-height-max;
@@ -153,23 +192,55 @@
           }
         }
 
+        .filters__options-wrapper {
+          flex: 0 0 25%;
+          text-align: center;
+
+          .article-page &, .report-page & {
+            display: none;
+          }
+        }
+
+          .filters__label {
+            display: inline-block;
+            vertical-align: middle;
+            // text-transform: uppercase;
+            color: @color-grey-text;
+            // font-size: @font-size;
+          }
+
+          .filters__options {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+          }
+
+            .filters__option {
+              display: inline-block;
+              vertical-align: middle;
+
+              a {
+                font-size: 2rem;
+                color: @color-grey-text;
+                text-decoration: none;
+              }
+
+            }
+
         //NAVIGATION MENU THAT OPENS ON USER INTERACTION
         .menu__navigation {
-          border-top: 1px solid @color-grey;
           background-color: @color-white;
-          position: absolute;
-          z-index: 2;
-          top: @menu-row-height;
-          left: 0;
-          width: 100%;
+          // position: absolute;
+          // z-index: 2;
+          // top: @menu-row-height;
+          // left: 0;
+          // width: 100%;
 
-          @media (min-width: @break-point-s) {
-            top: @menu-row-height-max;
-          }
-
-          .menu--open & {
-            width: 100vw;
-          }
+          // @media (min-width: @break-point-s) {
+          //   top: @menu-row-height-max;
+          // }
         }
 
           // THE MENU CATEGORY TAGS
@@ -180,7 +251,7 @@
             .menu__tags-list {
               list-style: none;
               padding: 0;
-              margin: 16px;
+              margin: 0;
             }
 
               .menu__tag {

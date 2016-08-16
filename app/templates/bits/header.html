@@ -14,23 +14,29 @@
   </div>
   <div class="header__row">
     <div class="header__row-wrapper">
-      <div class="header__menu menu header__cell">
-        <div class="menu__content">
-          <div class="menu__search">
+      <div class="header__filters filters header__cell">
+        <div class="filters__content">
+          <div class="filters__search">
             <span class="icon icon-icon_menu-search"></span>
+            <span class="icon icon-icon_close"></span>
             <input type="search" id="search" name="search" value="" placeholder="Søk etter emne..">
           </div>
-          <div class="menu__navigation">
-            <div class="menu__tags">
-              <ul class="menu__tags-list">
-                <li class="menu__tag menu__tag--selected"><a href="#">Alle</a></li>
-                <li class="menu__tag"><a href="#">Bærekraft</a></li>
-                <li class="menu__tag"><a href="#">Hus & hage</a></li>
-                <li class="menu__tag"><a href="#">Jordbruk</a></li>
-                <li class="menu__tag"><a href="#">Garasje</a></li>
-                <li class="menu__tag"><a href="#">Buss</a></li>
-              </ul>
-            </div>
+          <div class="filters__options-wrapper">
+            <div class="filters__label">Filtrer:</div>
+            <ul class="filters__options">
+              <li class="filters__option">
+                <a href="#"><span class="icon icon-icon_time-short"></span></a>
+              </li>
+              <li class="filters__option">
+                <a href="#"><span class="icon icon-icon_time-normal"></span></a>
+              </li>
+              <li class="filters__option">
+                <a href="#"><span class="icon icon-icon_time-long"></span></a>
+              </li>
+              <li class="filters__option">
+                <a href="#"><span class="icon icon-icon_play"></span></a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -38,5 +44,20 @@
         <a href="#">Om smartere valg</a>
       </div>
     </div>
+  </div>
+  <div class="header__row header__row--menu">
+    <div class="header__row-wrapper">
+      <div class="menu__navigation header__cell">
+        <div class="menu__tags">
+          <ul class="menu__tags-list">
+            <li class="menu__tag menu__tag--selected"><a href="#">Alle</a></li>
+            <li class="menu__tag"><a href="#">Bærekraft</a></li>
+            <li class="menu__tag"><a href="#">Hus & hage</a></li>
+            <li class="menu__tag"><a href="#">Jordbruk</a></li>
+            <li class="menu__tag"><a href="#">Garasje</a></li>
+            <li class="menu__tag"><a href="#">Buss</a></li>
+          </ul>
+        </div>
+      </div>
   </div>
 </header>

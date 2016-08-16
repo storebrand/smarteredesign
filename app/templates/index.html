@@ -24,6 +24,16 @@
     </div>
   </div>
 </section>
+<section class="section-grid section-grid--single">
+  <div class="section-grid__wrapper">
+
+    <div class="section-grid__content">
+      {% include "bits/grid-item-full.html" %}
+    </div>
+
+    </div>
+  </div>
+</section>
 <section class="section-grid section-grid--four">
   <div class="section-grid__wrapper">
 
@@ -31,6 +41,17 @@
       {% for i in range(0,4) %}
         {% include "bits/grid-item-simple.html" %}
       {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section-grid section-grid--two-thirds section-grid--reverse">
+  <div class="section-grid__wrapper">
+
+    <div class="section-grid__content">
+      {% include "bits/grid-item-full.html" %}
+      {% include "bits/grid-item.html" %}
+    </div>
+
     </div>
   </div>
 </section>
