@@ -1,6 +1,11 @@
 // SITE HEADER
 .header {
   border-top: 4px solid @color-profile;
+
+  .article-page &, .report-page & {
+    border-top-color: @color-grey;
+  }
+
   position: fixed;
   width: 100vw;
   z-index: 100;
@@ -298,6 +303,14 @@
           font-size: @font-size;
         }
       }
+    }
+
+    .header-scroll-progress {
+      height: 4px;
+      background-color: @color-profile;
+      position: absolute;
+      top: -4px;
+      z-index: 101;
     }
 
 .main {

@@ -1,7 +1,15 @@
+//LARGE SCREENS
 @padding-left-default-ls: 12%;
-@padding-right-default-ls: 20%;
+@padding-right-default-ls: 16%;
 @padding-left-min-ls: 6%;
 @padding-right-min-ls: 10%;
+
+//SMALL SCREENS
+@padding-left-default-ss: 8%;
+@padding-right-default-ss: 12%;
+@padding-left-min-ss: 4%;
+@padding-right-min-ss: 6%;
+
 @aside-transition-duration: 300ms;
 
 .article {
@@ -11,6 +19,16 @@
 // HEADER, TYPICALLY WITH TITLE, IMAGE AND TAGS
 .article__header {
   position: relative;
+
+  .article--report & {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
 }
 
   .article__featured-image-wrapper {
@@ -26,6 +44,10 @@
     height: auto;
     position: relative;
     z-index: 1;
+
+    .article--report & {
+      display: none;
+    }
   }
 
   // CONTENT WRAPPER
@@ -57,8 +79,16 @@
       margin: 0.6em 0 0.2em 0;
 
       .article--report & {
-        font-size: @font-size-xl;
-        margin: 0.6em 0;
+        font-size: @font-size-l;
+        margin: 0.5em 4% 0.2em 4%;
+
+        @media(min-width: @break-point-m-plus) {
+          font-size: @font-size-xl;
+        }
+
+        @media (max-width: @break-point-s) {
+          font-size: @font-size-ml;
+        }
       }
 
 
@@ -76,25 +106,38 @@
   // MOST OF THE ARTICLE, EXCEPT HEADER AND FOOTER
   // INCLUDING RELATED COLUMN
   .article__body {
-    display: flex;
     .restrain;
+
+    @media (min-width: @break-point-m) {
+      display: flex;
+    }
   }
 
     // ASIDE CONTENT - eg. RELATED CONTENT
     .article__aside {
-      @media (min-width: @break-point-m) {
 
+      @media (max-width: @break-point-m-min) {
+        overflow: hidden;
+        height: 330px;
+        border-bottom: 1px solid @color-grey;
+        transition: height @aside-transition-duration;
+
+        .aside--collapsed & {
+          height: 3rem;
+          transition: height @aside-transition-duration;
+        }
+      }
+
+      @media (min-width: @break-point-m) {
         flex: 0 0 30%;
         transition: flex-basis @aside-transition-duration;
-
         border-right: 1px solid @color-grey;
         box-sizing: border-box;
 
         .aside--collapsed & {
-          flex: 0 0 2%;
+          flex: 0 0 10%;
           transition: flex-basis @aside-transition-duration;
         }
-
       }
 
     }
@@ -102,7 +145,12 @@
       // ASIDE CONTENT
       .aside__content {
         position: relative;
-        padding: 4rem 9%;
+        padding: 3rem 0 1rem 0;
+
+        @media (min-width: @break-point-m) {
+          padding: 4rem 9%;
+        }
+
       }
 
 
@@ -223,7 +271,7 @@
               display: inline-block;
               vertical-align: top;
               margin: 0 10px;
-              width: 50vw;
+              width: 36vw;
             }
 
             a {
@@ -251,21 +299,28 @@
 
             .content-list__item-title {
               white-space: normal;
-              margin: 1em 0 2em 0;
+              margin: 1em 0;
+
+              @media (min-width: @break-point-m) {
+                margin: 1em 0 2em 0;
+              }
+
             }
 
 
 
     // ARTICLE CONTENT EXCLUDING ASIDE CONTENT
     .article__content {
-      padding: 4rem 0 2rem 0;
+      padding: 2rem 0 2rem 0;
+
       @media (min-width: @break-point-m) {
+        padding-top: 4rem;
         flex: 0 0 70%;
         transition: flex-basis 200ms;
         box-sizing: border-box;
 
         .aside--collapsed & {
-          flex: 0 0 98%;
+          flex: 0 0 90%;
           transition: flex-basis 200ms;
         }
       }
@@ -275,11 +330,16 @@
 
       // ARTICLE ABSTRACT / SUMMARY
       .article__abstract {
-        font-size: @font-size-ms;
+        font-size: @font-size-sm;
         line-height: 1.5em;
 
         p {
           margin: 1em @padding-right-default-ls 2em @padding-left-default-ls;
+
+          @media (max-width: @break-point-xs) {
+            font-size: @font-size-plus;
+            margin: 1em @padding-right-default-ss 2em @padding-left-default-ss;
+          }
         }
       }
 
@@ -289,26 +349,39 @@
         border-bottom: 1px solid @color-grey;
         font-size: 0;
         color: @color-grey-text;
+        padding: 0 0 0 @padding-left-default-ls;
+
+        @media (max-width: @break-point-xs) {
+          padding-left: @padding-left-default-ss;
+        }
       }
 
         // ARTICLE LENGTH INDICATOR
         .article__meta-length {
           display: inline-block;
           vertical-align: top;
-          width: 40%;
+          padding: 8px 1rem 8px 0;
           text-align: right;
-          padding: 8px 2rem;
           box-sizing: border-box;
+
+          @media (min-width: @break-point-s-plus) {
+            padding-right: 2rem;
+          }
+
         }
 
         // ARTICLE SHARE MODULE
         .article__share {
           display: inline-block;
           vertical-align: top;
-          width: 60%;
+
           border-left: 1px solid @color-grey;
-          padding: 8px 2rem;
+          padding: 8px 0 8px 1rem;
           box-sizing: border-box;
+
+          @media (min-width: @break-point-s-plus) {
+            padding-right: 1rem;
+          }
 
         }
 
@@ -316,8 +389,21 @@
             display: inline-block;
             vertical-align: middle;
             box-sizing: border-box;
-            padding: 0 1rem;
             font-size: 0;
+
+            @media (min-width: @break-point-s-plus) {
+              padding: 0 10px 0 0;
+
+              .article__share & {
+                padding: 0 0 0 10px;
+              }
+            }
+
+            >span {
+              font-size: 2rem;
+              display: inline-block;
+              vertical-align: middle;
+            }
           }
 
             .article__meta-link {
@@ -335,6 +421,13 @@
             text-transform: uppercase;
             line-height: 1.2em;
             text-align: left;
+
+            @media (max-width: @break-point-s) {
+              .article__share & {
+                display: none;
+              }
+            }
+
           }
 
         // ARTICLE BODY TEXT INCL. SIMPLE PARAGRAPHS
@@ -347,10 +440,18 @@
             &:first-child {
               margin-top: 2em;
             }
+
+            @media (max-width: @break-point-xs) {
+              margin: 1em @padding-right-default-ss 2em @padding-left-default-ss;
+            }
           }
 
           h3 {
             margin: 2em @padding-right-default-ls 1em @padding-left-default-ls;
+
+            @media (max-width: @break-point-xs) {
+              margin: 2em @padding-right-default-ss 1em @padding-left-default-ss;
+            }
           }
 
           a {
@@ -370,6 +471,10 @@
           .article__body-image {
             margin: 1em @padding-right-min-ls 1em @padding-left-min-ls;
 
+            @media (max-width: @break-point-xs) {
+              margin: 1em @padding-right-min-ss 1em @padding-left-min-ss;
+            }
+
             img {
               width: 100%;
               height: auto;
@@ -386,6 +491,10 @@
         // ARTICLE QUOTE MODULE
         .article__quote-wrapper {
           margin: 3em @padding-right-min-ls 3em @padding-left-min-ls;
+
+          @media (max-width: @break-point-xs) {
+            margin: 3em @padding-right-min-ss 3em @padding-left-min-ss;
+          }
         }
 
           // THE QUOTE TEXT
@@ -393,6 +502,10 @@
             font-size: @font-size-ml;
             line-height: 1.25em;
             margin: 0;
+
+            @media (max-width: @break-point-s) {
+              font-size: @font-size-m;
+            }
           }
 
           // THE SOURCE OF THE QUOTE
@@ -410,12 +523,21 @@
   // ARTICLE PUBLISHED DATE
   .article__published {
     margin: 1em @padding-right-default-ls 1em @padding-left-default-ls;
+
+    @media (max-width: @break-point-xs) {
+      margin: 1em @padding-right-default-ss 1em @padding-left-default-ss;
+    }
+
     color: @color-grey-text;
   }
 
   // TAGS WRAPPER - USED BOTH IN HEADER AND BODY TEXT
   .article__tags {
     margin: 2em @padding-right-default-ls 1em @padding-left-default-ls;
+
+    @media (max-width: @break-point-xs) {
+      margin: 2em @padding-right-default-ss 1em @padding-left-default-ss;
+    }
 
     .article__header & {
       margin: 0;
