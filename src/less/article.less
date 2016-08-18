@@ -2,6 +2,7 @@
 @padding-right-default-ls: 20%;
 @padding-left-min-ls: 6%;
 @padding-right-min-ls: 10%;
+@aside-transition-duration: 300ms;
 
 .article {
 
@@ -75,18 +76,25 @@
   // MOST OF THE ARTICLE, EXCEPT HEADER AND FOOTER
   // INCLUDING RELATED COLUMN
   .article__body {
-    display: table;
+    display: flex;
     .restrain;
   }
 
     // ASIDE CONTENT - eg. RELATED CONTENT
     .article__aside {
       @media (min-width: @break-point-m) {
-        display: table-cell;
-        vertical-align: top;
+
+        flex: 0 0 30%;
+        transition: flex-basis @aside-transition-duration;
+
         border-right: 1px solid @color-grey;
-        width: 30%;
-        // min-width: 200px;
+        box-sizing: border-box;
+
+        .aside--collapsed & {
+          flex: 0 0 2%;
+          transition: flex-basis @aside-transition-duration;
+        }
+
       }
 
     }
@@ -97,9 +105,6 @@
         padding: 4rem 9%;
       }
 
-      .aside--hidden {
-
-      }
 
         .aside__toggle-button {
           position: absolute;
@@ -113,17 +118,40 @@
           text-decoration: none;
           text-transform: uppercase;
           font-size: @font-size-xs;
+
+          width: 120px;
+          height: 32px;
+          box-sizing: border-box;
+          text-align: center;
+          overflow: hidden;
+
         }
 
-        .aside__open-button {
-          display: none;
-        }
+          .toggle-button-label {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            z-index: 1;
+            color: @color-black;
+          }
 
-        // .aside__close-button {
-        //   .aside--hidden & {
-        //     display: none;
-        //   }
-        // }
+          .toggle-button-label--open {
+            transform: translateY(-40px);
+            transition: transform 200ms @aside-transition-duration;
+            .aside--collapsed & {
+              transform: translateY(0);
+              transition: transform 200ms @aside-transition-duration;
+            }
+          }
+
+          .toggle-button-label--close {
+            transform: translateY(0);
+            transition: transform 200ms @aside-transition-duration;
+            .aside--collapsed & {
+              transform: translateY(40px);
+              transition: transform 200ms @aside-transition-duration;
+            }
+          }
 
         .aside__title {
           .open-sans;
@@ -131,16 +159,21 @@
           font-size: @font-size-s;
           margin: 1rem 0;
 
-          .aside--hidden & {
-            display: none;
+          .aside--collapsed & {
+            // display: none;
+            opacity: 0;
           }
         }
 
         // ASIDE - RELATED CONTENT LIST WRAPPER TO ALLOW SCROLLING ON SMALL SCREENS
         .content-list__wrapper {
+          opacity: 1;
+          transition: opacity 200ms 200ms;
 
-          .aside--hidden & {
-            display: none;
+          .aside--collapsed & {
+            // display: none;
+            opacity: 0;
+            transition: opacity 200ms;
           }
 
           @media (max-width: @break-point-m-min) {
@@ -192,6 +225,10 @@
               margin: 0 10px;
               width: 50vw;
             }
+
+            a {
+              text-decoration: none;
+            }
           }
 
             .content-list__item-image {
@@ -223,9 +260,14 @@
     .article__content {
       padding: 4rem 0 2rem 0;
       @media (min-width: @break-point-m) {
-        display: table-cell;
-        vertical-align: top;
-        width: 70%;
+        flex: 0 0 70%;
+        transition: flex-basis 200ms;
+        box-sizing: border-box;
+
+        .aside--collapsed & {
+          flex: 0 0 98%;
+          transition: flex-basis 200ms;
+        }
       }
 
     }
@@ -273,10 +315,18 @@
           .article__meta-icons {
             display: inline-block;
             vertical-align: middle;
-            font-size: 2rem;
             box-sizing: border-box;
             padding: 0 1rem;
+            font-size: 0;
           }
+
+            .article__meta-link {
+              display: inline-block;
+              vertical-align: middle;
+              text-decoration: none;
+              font-size: 2rem;
+              color: @color-grey-text;
+            }
 
           .article__meta-label {
             display: inline-block;
@@ -381,6 +431,7 @@
       color: @color-profile;
       text-decoration: none;
       font-size: @font-size-xs;
+      margin-bottom: 4px;
 
       .article__header & {
         color: @color-grey-text;

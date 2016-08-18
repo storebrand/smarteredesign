@@ -22,11 +22,13 @@
 
     transition: transform 200ms linear;
     transform: translate(0,-100%);
+    pointer-events: none;
 
     .menu--open & {
       transform: translate(0,0);
       transition: transform 200ms linear;
       display: block;
+      pointer-events: all;
     }
   }
 

@@ -2,10 +2,10 @@
   <div class="header__row">
     <div class="header__row-wrapper">
       <div class="header__logo header__cell">
-        <a href="/">{% include "bits/logo.html" %}</a>
+        <a href="/" tabindex="1">{% include "bits/logo.html" %}</a>
       </div>
       <h1 class="header__title header__cell">
-        <a href="/">
+        <a href="/" tabindex="0">
           <span class="lowercase">Storebrand</span>
           <span class="uppercase">Smartere valg</span>
         </a>
@@ -16,32 +16,32 @@
     <div class="header__row-wrapper">
       <div class="header__filters filters header__cell">
         <div class="filters__content">
-          <div class="filters__search">
-            <span class="icon icon-icon_menu-search"></span>
-            <span class="icon icon-icon_close"></span>
-            <input type="search" id="search" name="search" value="" placeholder="Søk etter emne..">
-          </div>
+          <form action="" method="" class="filters__search">
+            <span role="button" class="icon icon-icon_menu-search" alt="Åpne meny"></span>
+            <span role="button" class="icon icon-icon_close" alt="Lukk meny"></span>
+            <input tabindex="2" type="search" id="search" name="search" value="" aria-label="Søk etter emne.." title="Søk etter emne.." placeholder="Søk etter emne..">
+          </form>
           <div class="filters__options-wrapper">
             <div class="filters__label">Filtrer:</div>
             <ul class="filters__options">
               <li class="filters__option">
-                <a href="#"><span class="icon icon-icon_time-short"></span></a>
+                <a href="#" tabindex="-1"><span class="icon icon-icon_time-short"></span></a>
               </li>
               <li class="filters__option">
-                <a href="#"><span class="icon icon-icon_time-normal"></span></a>
+                <a href="#" tabindex="-1"><span class="icon icon-icon_time-normal"></span></a>
               </li>
               <li class="filters__option">
-                <a href="#"><span class="icon icon-icon_time-long"></span></a>
+                <a href="#" tabindex="-1"><span class="icon icon-icon_time-long"></span></a>
               </li>
               <li class="filters__option">
-                <a href="#"><span class="icon icon-icon_play"></span></a>
+                <a href="#" tabindex="-1"><span class="icon icon-icon_play"></span></a>
               </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="header__info-menu header__cell">
-        <a href="#">Om smartere valg</a>
+        <a tabindex="20" href="#">Om smartere valg</a>
       </div>
     </div>
   </div>
@@ -50,12 +50,12 @@
       <div class="menu__navigation header__cell">
         <div class="menu__tags">
           <ul class="menu__tags-list">
-            <li class="menu__tag menu__tag--selected"><a href="#">Alle</a></li>
-            <li class="menu__tag"><a href="#">Bærekraft</a></li>
-            <li class="menu__tag"><a href="#">Hus & hage</a></li>
-            <li class="menu__tag"><a href="#">Jordbruk</a></li>
-            <li class="menu__tag"><a href="#">Garasje</a></li>
-            <li class="menu__tag"><a href="#">Buss</a></li>
+            <li class="menu__tag menu__tag--selected"><a tabindex="3" href="#">Alle</a></li>
+            <li class="menu__tag"><a tabindex="4" href="#">Bærekraft</a></li>
+            <li class="menu__tag"><a tabindex="5" href="#">Hus & hage</a></li>
+            <li class="menu__tag"><a tabindex="6" href="#">Jordbruk</a></li>
+            <li class="menu__tag"><a tabindex="7" href="#">Garasje</a></li>
+            <li class="menu__tag"><a tabindex="8" href="#">Buss</a></li>
           </ul>
         </div>
       </div>

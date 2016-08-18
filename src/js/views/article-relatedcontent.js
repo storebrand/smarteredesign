@@ -9,11 +9,9 @@ var ArticleRelatedContent = {
     if(window.matchMedia && window.matchMedia("(max-width: 767px)").matches) {
       this.setupMobileScroll();
     }
-
-    this.$showButton = this.$el.find("#open-button");
-    this.$showButton.click(_.bind(this.onCloseClick, this));
-    this.$hideButton = this.$el.find("#close-button");
-    this.$hideButton.click(_.bind(this.onCloseClick, this));
+    this.$articleBody = this.$el.closest(".article__body");
+    this.$toggleButton = this.$el.find("#toggle-button");
+    this.$toggleButton.click(_.bind(this.onToggleClick, this));
 
   },
 
@@ -28,28 +26,31 @@ var ArticleRelatedContent = {
     });
   },
 
-  onCloseClick: function (e) {
+  onToggleClick: function (e) {
     e.preventDefault();
     var _this = this;
 
-    if(!this.$el.hasClass("aside--hidden")) {
-      this.w = this.$el.width();
-      this.$el.addClass("aside--hidden");
-      this.$el.animate({width: '2%'}, 300, "linear", function () {
-        _this.$hideButton.hide();
-        _this.$showButton.show();
-        setTimeout(function() {
-            _this.$showButton.animate({right: -(_this.$showButton.outerWidth())}, 150);
-        },200);
-
-      });
+    if(!this.$articleBody.hasClass("aside--collapsed")) {
+      // this.$el.addClass("aside--hidden");
+      this.$articleBody.addClass('aside--collapsed');
+      // this.w = this.$el.width();
+      // this.$el.addClass("aside--hidden");
+      // this.$el.animate({flexBasis: '2%'}, {duration: 200, easing: "linear", complete: function () {
+      //   _this.$hideButton.hide();
+      //   _this.$showButton.show();
+      //   setTimeout(function() {
+      //       _this.$showButton.animate({right: -(_this.$showButton.outerWidth())}, 150);
+      //   },200);
+      //
+      // }});
     } else {
-      this.$showButton.hide();
-      this.$hideButton.show();
-      this.$el.animate({width: '30%'}, 300, "linear", function () {
-
-        _this.$el.removeClass("aside--hidden");
-      });
+      // this.$el.removeClass("aside--hidden");
+      this.$articleBody.removeClass('aside--collapsed');
+      // this.$showButton.hide();
+      // this.$hideButton.show();
+      // this.$el.animate({flexBasis: '30%'}, {duration: 200, easing: "linear", complete: function () {
+      //   _this.$el.removeClass("aside--hidden");
+      // }});
     }
   }
 }
