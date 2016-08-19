@@ -2,6 +2,9 @@
 .header {
   border-top: 4px solid @color-profile;
   pointer-events: none;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
 
   .article-page &, .report-page & {
     border-top-color: @color-grey;
@@ -10,10 +13,6 @@
   a, input, .icon {
     pointer-events: all;
   }
-
-  position: fixed;
-  width: 100vw;
-  z-index: 100;
 }
 
   @menu-row-height: 38px;
@@ -24,13 +23,13 @@
     border-bottom: 1px solid @color-grey;
     background-color: @color-white;
     position: relative;
-    z-index: 2;
+    z-index: 3;
   }
 
   .header__row--menu {
-    z-index: 1;
+    z-index: 2;
 
-    transition: transform 200ms linear;
+    transition: transform 100ms 300ms linear;
     transform: translate(0,-100%);
     pointer-events: none;
 
@@ -42,10 +41,23 @@
     }
   }
 
+  .header__row--additional-menu {
+    z-index: 1;
+
+    transition: transform 200ms linear;
+    transform: translate(0,-500%);
+    pointer-events: none;
+
+    .menu--open & {
+      transform: translate(0,0);
+      transition: transform 400ms linear;
+      display: block;
+      pointer-events: all;
+    }
+  }
+
     // WRAPPER CONSTRAINING CONTENT TO DEFINED MAX-WIDTH
     .header__row-wrapper {
-      display: flex;
-      flex-flow: row nowrap;
       .restrain;
       padding: 0 2rem;
       box-sizing: border-box;
@@ -58,6 +70,10 @@
           display: flex;
           flex-flow: row-reverse nowrap;
         }
+      }
+
+      @media (max-width: @break-point-xs) {
+        padding: 0 1rem;
       }
 
     }
@@ -129,14 +145,7 @@
 
     //HEADER MENU INCLUDING SEARCH (CELL)
     .header__filters {
-      width: 88%;
-      vertical-align: top;
-      border-right: 1px solid @color-grey;
       padding: 0;
-
-      // @media (min-width: @break-point-s) {
-      //   width: 88%;
-      // }
     }
 
       //CONTENT WRAPPER
@@ -154,8 +163,15 @@
 
         //THE SEARCH FIELD WRAPPER
         .filters__search {
-          flex: 0 0 75%;
-          border-right: 1px solid @color-grey;
+          flex: 0 0 80%;
+
+          @media (max-width: @break-point-l) {
+            flex: 0 0 70%;
+          }
+
+          @media (max-width: @break-point-m-min) {
+            flex: 0 0 50%;
+          }
 
           .icon {
             font-size: 2rem;
@@ -175,7 +191,6 @@
 
           .article-page &, .report-page & {
             flex: 0 0 100%;
-            border-right: none;
           }
 
           .icon-icon_close {
@@ -196,6 +211,7 @@
             font-size: @font-size-s;
             padding-left: 2rem;
             outline: none;
+            -webkit-appearance: none;
 
             @media (min-width: @break-point-s) {
               height: @menu-row-height-max;
@@ -205,20 +221,41 @@
         }
 
         .filters__options-wrapper {
-          flex: 0 0 25%;
-          text-align: center;
+          flex: 0 0 20%;
+          text-align: right;
+          border-left: 1px solid @color-grey;
+          display: none;
+          padding: 8px 0;
+          box-sizing: border-box;
+          height: @menu-row-height-max;
+
+          @media (max-width: @break-point-l) {
+            flex: 0 0 30%;
+          }
+
+          @media (max-width: @break-point-m-min) {
+            flex: 0 0 50%;
+          }
+
+          .menu--open & {
+            display: block;
+          }
 
           .article-page &, .report-page & {
             display: none;
           }
         }
 
+
           .filters__label {
             display: inline-block;
             vertical-align: middle;
-            // text-transform: uppercase;
             color: @color-grey-text;
-            // font-size: @font-size;
+
+            @media (max-width: @break-point-xs) {
+              display: none;
+            }
+
           }
 
           .filters__options {
@@ -253,7 +290,7 @@
 
             .menu__tags-list {
               list-style: none;
-              padding: 0;
+              padding: 1rem 0;
               margin: 0;
             }
 
@@ -274,32 +311,15 @@
                 }
               }
 
-    //HEADER INFO MENU (CELL)
-    .header__info-menu {
-      text-align: right;
-      vertical-align: top;
-      min-width: 144px;
-      white-space: nowrap;
-      box-sizing: border-box;
-      padding-top: 9px;
-      padding-bottom: 9px;
+        //HEADER INFO MENU (CELL)
+        .header__info-menu {
+          padding: 8px 0;
 
-      @media (min-width: @break-point-s) {
-        width: 12%;
-        padding-top: 13px;
-        padding-bottom: 13px;
-        min-width: 170px;
-      }
-
-      a {
-        .menu-link;
-        font-size: @font-size-s;
-
-        @media (min-width: @break-point-s) {
-          font-size: @font-size;
+          a {
+            .menu-link;
+            font-size: @font-size-s;
+          }
         }
-      }
-    }
 
     .header-scroll-progress {
       height: 4px;

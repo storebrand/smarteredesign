@@ -30,9 +30,18 @@ var Header = {
   },
 
   onFieldKeyUp: function (e) {
-    if(e.keyCode === 13) {
-      this.$form.submit();
+
+    switch (e.keyCode) {
+      case 13:
+        this.$form.submit();
+        break;
+      case 27:
+        this.hideMenu();
+        break;
+      default:
+
     }
+
   },
 
 
