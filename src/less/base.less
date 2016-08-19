@@ -1,9 +1,14 @@
 // SITE HEADER
 .header {
   border-top: 4px solid @color-profile;
+  pointer-events: none;
 
   .article-page &, .report-page & {
     border-top-color: @color-grey;
+  }
+
+  a, input, .icon {
+    pointer-events: all;
   }
 
   position: fixed;
@@ -239,15 +244,6 @@
         //NAVIGATION MENU THAT OPENS ON USER INTERACTION
         .menu__navigation {
           background-color: @color-white;
-          // position: absolute;
-          // z-index: 2;
-          // top: @menu-row-height;
-          // left: 0;
-          // width: 100%;
-
-          // @media (min-width: @break-point-s) {
-          //   top: @menu-row-height-max;
-          // }
         }
 
           // THE MENU CATEGORY TAGS

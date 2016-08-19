@@ -54,9 +54,13 @@
   .article__header-content {
     margin: 0 @padding-right-default-ls 0 @padding-left-default-ls;
 
+    @media(max-width: @break-point-m-min) {
+      margin: 0 @padding-right-default-ss 0 @padding-left-default-ss;
+    }
+
     .article--report & {
       .vertical-gradient;
-      margin: 0;
+      margin: 0 !important;
 
       position: absolute;
       z-index: 2;
@@ -75,8 +79,12 @@
     .article__title {
       .signa-light;
       line-height: 1.2em;
-      font-size: @font-size-l;
+      font-size: @font-size-ml;
       margin: 0.6em 0 0.2em 0;
+
+      @media(min-width: @break-point-m-plus) {
+        font-size: @font-size-l;
+      }
 
       .article--report & {
         font-size: @font-size-l;
