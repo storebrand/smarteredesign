@@ -11,8 +11,8 @@ var ArticleView = {
     this.$el = $(el);
     this.menuHeight = parseInt($('main').css("padding-top"));
 
-    if(this.$el.find(".article__aside")) {
-      ArticleRelatedContent.init(document.getElementById('article-related-content'));
+    if(this.$el.find(".article__related")) {
+      ArticleRelatedContent.init(document.getElementsByClassName('article__related'));
     }
 
     if(obj.type === "report") {

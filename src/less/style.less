@@ -57,6 +57,18 @@ a {
   color: @color-black;
 }
 
+.screen--large {
+  @media (max-width: @break-point-m-min) {
+    display: none;
+  }
+}
+
+.screen--small {
+  @media (min-width: @break-point-m) {
+    display: none;
+  }
+}
+
 @import "base";
 @import "article";
 @import "grid";
