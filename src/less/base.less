@@ -340,3 +340,28 @@
 .main {
   padding-top: @header-height;
 }
+
+.site-footer {
+  margin-top: 4rem;
+  border-top: 1px solid @color-profile;
+}
+
+  .site-footer__content {
+    .restrain;
+    box-sizing: border-box;
+    padding: 2rem;
+    display: flex;
+  }
+
+    .site-footer__column {
+      flex: 0 0 50%;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+
+      .site-footer__link {
+        color: @color-profile;
+        text-decoration: none;
+      }

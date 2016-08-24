@@ -388,6 +388,29 @@ a {
 .main {
   padding-top: 106px;
 }
+.site-footer {
+  margin-top: 4rem;
+  border-top: 1px solid #bb1b18;
+}
+.site-footer__content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1280px;
+  box-sizing: border-box;
+  padding: 2rem;
+  display: flex;
+}
+.site-footer__column {
+  flex: 0 0 50%;
+}
+.site-footer__column:last-child {
+  text-align: right;
+}
+.site-footer__link {
+  color: #bb1b18;
+  text-decoration: none;
+}
 .article__header {
   position: relative;
 }
