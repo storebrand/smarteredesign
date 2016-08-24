@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="section-grid section-grid--two-thirds">
+<section class="section-grid section-grid--two-thirds section-grid--reverse">
   <div class="section-grid__wrapper">
 
     <div class="section-grid__content">
@@ -12,6 +12,18 @@
     </div>
   </div>
 </section>
+<!-- <section class="section-grid section-grid--two-thirds">
+  <div class="section-grid__wrapper">
+
+    <div class="section-grid__content">
+      {% for i in range(0,3) %}
+        {% include "bits/grid-item.html" %}
+      {% endfor %}
+    </div>
+
+    </div>
+  </div>
+</section> -->
 <section class="section-grid section-grid--two">
   <div class="section-grid__wrapper">
 
@@ -19,6 +31,17 @@
       {% for i in range(0,2) %}
         {% include "bits/grid-item.html" %}
       {% endfor %}
+    </div>
+
+    </div>
+  </div>
+</section>
+<section class="section-grid section-grid--two">
+  <div class="section-grid__wrapper">
+
+    <div class="section-grid__content">
+      {% include "bits/grid-item.html" %}
+      {% include "bits/grid-item-columnist.html" %}
     </div>
 
     </div>
@@ -44,7 +67,7 @@
     </div>
   </div>
 </section>
-<section class="section-grid section-grid--two-thirds section-grid--reverse">
+<section class="section-grid section-grid--two-thirds">
   <div class="section-grid__wrapper">
 
     <div class="section-grid__content">

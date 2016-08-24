@@ -174,7 +174,7 @@
           }
 
           .icon {
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: @color-grey-text;
             position: absolute;
             top: 50%;
@@ -264,6 +264,7 @@
             margin: 0;
             padding: 0;
             list-style: none;
+            font: 0/0 a;
           }
 
             .filters__option {
@@ -271,9 +272,16 @@
               vertical-align: middle;
 
               a {
-                font-size: 2rem;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 4px;
+                font: 0/0 a;
                 color: @color-grey-text;
                 text-decoration: none;
+              }
+
+              .icon {
+                font-size: 1.4rem;
               }
 
             }
