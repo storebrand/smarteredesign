@@ -36,6 +36,13 @@ app.get('/article', function (req, res) {
 
 });
 
+app.get('/tips', function (req, res) {
+    var _this = this;
+
+    var data = {type: 'tips'};
+    res.render('tips.html', data);
+
+});
 
 var server = app.listen(process.env.PORT || 3000, function () {
   var host = server.address().address;

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="article article--tips" id="article">
+
+  <div class="article__body">
+    <div class="article__content">
+      <header class="article__header">
+        <div class="article__header-content">
+          <div class="article__tags">
+            <span class="article__tag">Miljø</span>
+          </div>
+          <h1 class="article__title">Ti ting du ikke visste om IKEA</h1>
+          <div class="article__author">Av Hilde Stray Due</div>
+        </div>
+      </header>
+      <div class="article__abstract">
+        <p>Å velge økologisk mat burde være et selvsagt valg for alle. Selv om både etterspørsel og produksjon av økologisk mat i Norge har økt de siste årene, så er det fremdeles behov for å ha fokus på naturlig produksjon.</p>
+      </div>
+      {% include 'bits/article-meta.html' %}
+      <div class="article__related aside screen--small" id="article-related-small">
+        {% include "bits/article-aside.html" %}
+      </div>
+
+      <div class="article__body-text">
+        {% for i in range(0,6) %}
+          {% set obj = {count: i+1, reverse: i%2!=0, noImage: i==3} %}
+          {% include "bits/article-tip.html" %}
+        {% endfor %}
+        <div class="article__published">
+          Publisert: 21. August 2016
+        </div>
+        <div class="article__tags">
+          <a href="/emne/miljo" class="article__tag">Miljø</a>
+          <a href="/emne/mat" class="article__tag">Mat</a>
+          <a href="/emne/landbruk" class="article__tag">Landbruk</a>
+          <a href="/emne/okologisk" class="article__tag">Økologisk</a>
+          <a href="/emne/baerekraft" class="article__tag">Bærekraft</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+  <nav class="article__nav" role="navigation">
+    <div class="article__nav-wrapper">
+      <a href="#" class="article__nav-item nav-item article--prev">
+        <div class="nav-item__image" style="background-image: url('images/unsplash01.jpg')">
+          <img src="images/unsplash01.jpg" alt="blåbær!" />
+        </div>
+        <div class="nav-item__info">
+          <div class="nav-item__label">Forrige</div>
+          <h4 class="nav-item__title">Teknologi-optimisme</h4>
+        </div>
+      </a>
+      <a href="#" class="article__nav-item nav-item article--next">
+        <div class="nav-item__image" style="background-image: url('images/unsplash01.jpg')">
+          <img src="images/unsplash01.jpg" alt="blåbær!" />
+        </div>
+        <div class="nav-item__info">
+          <div class="nav-item__label">Neste</div>
+          <h4 class="nav-item__title">Teknologi-optimisme</h4>
+        </div>
+      </a>
+    </div>
+  </nav>
+  <section class="article__related-items section-grid section-grid--two">
+    <div class="section-grid__wrapper">
+      <h4 class="section-grid__title">Flere reportasjer</h4>
+
+      <div class="section-grid__content">
+        {% for i in range(0,2) %}
+          {% include "bits/grid-item.html" %}
+        {% endfor %}
+      </div>
+
+      </div>
+    </div>
+  </section>
+  <div class="article__related-items section-grid section-grid--four">
+    <div class="section-grid__wrapper">
+      <h4 class="section-grid__title">Relevante artikler</h4>
+
+      <div class="section-grid__content">
+        {% for i in range(0,4) %}
+          {% include "bits/grid-item-simple.html" %}
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

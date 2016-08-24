@@ -10,6 +10,7 @@ var App = {
       switch (obj.type) {
         case "article":
         case "report":
+        case "tips":
           ArticleView.init(document.getElementById('article'), obj);
           break;
         default:
