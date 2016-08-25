@@ -18,15 +18,14 @@
         <p>Å velge økologisk mat burde være et selvsagt valg for alle. Selv om både etterspørsel og produksjon av økologisk mat i Norge har økt de siste årene, så er det fremdeles behov for å ha fokus på naturlig produksjon.</p>
       </div>
       {% include 'bits/article-meta.html' %}
-      <div class="article__related aside screen--small" id="article-related-small">
-        {% include "bits/article-aside.html" %}
-      </div>
 
       <div class="article__body-text">
-        {% for i in range(0,6) %}
-          {% set obj = {count: i+1, reverse: i%2!=0, noImage: i==3} %}
-          {% include "bits/article-tip.html" %}
-        {% endfor %}
+        <div class="article__tip-wrapper">
+          {% for i in range(0,6) %}
+            {% set obj = {count: i+1, reverse: i%2!=0, noImage: i==3} %}
+            {% include "bits/article-tip.html" %}
+          {% endfor %}
+        </div>
         <div class="article__published">
           Publisert: 21. August 2016
         </div>

@@ -77,6 +77,13 @@
       text-align: center;
     }
 
+    .article--tips & {
+      @media (max-width: @break-point-l-min) {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+    }
+
   }
 
     // THE ARTICLE TITLE
@@ -102,7 +109,6 @@
           font-size: @font-size-ml;
         }
       }
-
 
     }
 
@@ -375,6 +381,12 @@
 
         .article--tips & {
           .restrain;
+
+          @media (max-width: @break-point-l-min) {
+            p {
+              margin: 1rem 2rem 2rem 2rem;
+            }
+          }
         }
       }
 
@@ -388,6 +400,10 @@
 
         @media (max-width: @break-point-xs) {
           padding-left: @padding-left-default-ss;
+        }
+
+        .article--tips & {
+          padding-left: 0;
         }
 
 
@@ -429,6 +445,10 @@
             padding-left: 0;
             display: block;
             .restrain;
+
+            @media (max-width: @break-point-s) {
+              padding-left: 2rem;
+            }
           }
 
         }
@@ -476,11 +496,24 @@
               }
             }
 
+            .article--tips & {
+              margin-left: 2rem;
+
+              @media (min-width: @break-point-l) {
+                margin-left: @padding-left-default-ls;
+              }
+
+            }
+
           }
 
         // ARTICLE BODY TEXT INCL. SIMPLE PARAGRAPHS
         // AND COMPLEX MODULES
         .article__body-text {
+
+          .article--tips & {
+            .restrain;
+          }
 
           p {
             margin: 1em @padding-right-default-ls 2em @padding-left-default-ls;
@@ -573,12 +606,18 @@
   // ARTICLE PUBLISHED DATE
   .article__published {
     margin: 1em @padding-right-default-ls 1em @padding-left-default-ls;
+    color: @color-grey-text;
 
     @media (max-width: @break-point-xs) {
       margin: 1em @padding-right-default-ss 1em @padding-left-default-ss;
     }
 
-    color: @color-grey-text;
+    .article--tips & {
+      @media (max-width: @break-point-m-min) {
+        margin: 1rem 2rem;
+      }
+    }
+
   }
 
   // TAGS WRAPPER - USED BOTH IN HEADER AND BODY TEXT
@@ -591,6 +630,12 @@
 
     .article__header & {
       margin: 0;
+    }
+
+    .article--tips .article__body-text & {
+      @media (max-width: @break-point-m-min) {
+        margin: 2rem;
+      }
     }
   }
 
@@ -729,29 +774,69 @@
 * STYLES RELATED TO TIPS ARTICLE
 */
 
+.article__tip-wrapper {
+  margin: 4rem 2rem 4rem 2rem;
+
+  @media (min-width: @break-point-l) {
+    margin: 4rem @padding-right-default-ls 4rem @padding-left-default-ls;
+  }
+
+}
+
 .article__tip-row {
+  margin: 6rem 0;
 
   &:not(.no-image) {
-    display: flex;
+    @media(min-width: @break-point-m) {
+      display: flex;
+      align-items: center;
+    }
   }
-  .restrain;
 
   &.row--reverse {
-    flex-flow: row-reverse;
+    @media(min-width: @break-point-m) {
+      flex-flow: row-reverse;
+    }
   }
 }
 
   .article__tip-column {
-    flex: 0 0 46%;
-    padding: 2rem;
     box-sizing: border-box;
 
+    @media(min-width: @break-point-m) {
+      flex: 0 0 41%;
+    }
+
+    @media (max-width: @break-point-m-min) {
+      text-align: center;
+    }
+
+    @media (max-width: @break-point-m-min) and (min-width: @break-point-s) {
+      padding: 0 6%;
+
+      &:first-child {
+        padding: 0 20% 0 20%;
+      }
+    }
+
     .row--reverse & {
-      text-align: right;
+      @media(min-width: @break-point-m) {
+        text-align: right;
+      }
     }
 
     &:last-child {
-      flex: 0 0 54%;
+      @media(min-width: @break-point-m) {
+        flex: 0 0 59%;
+        padding-left: 4rem;
+      }
+
+      .row--reverse & {
+        @media(min-width: @break-point-m) {
+          padding-right: 4rem;
+        }
+
+      }
     }
 
     .no-image & {
@@ -782,11 +867,18 @@
     }
 
     .article__tip-count {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
+      margin: 0 0 0.5em 0;
       .open-sans-bold;
-      font-size: 74px;
+      font-size: @font-size-l;
       color: @color-grey-dark;
+
+      @media (min-width: @break-point-m-plus) {
+        font-size: 74px;
+      }
+
+      @media (max-width: @break-point-m-min) {
+        margin-top: 4rem;
+      }
     }
 
     .article__tip-description {
