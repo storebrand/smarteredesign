@@ -1073,6 +1073,7 @@ a {
 }
 @media (min-width: 768px) {
   .row--reverse .article__tip-column:last-child {
+    padding-left: 0;
     padding-right: 4rem;
   }
 }
