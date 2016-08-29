@@ -20,9 +20,9 @@
       {% include 'bits/article-meta.html' %}
 
       <div class="article__body-text">
-        <div class="article__tip-wrapper tip--standard">
+        <div class="article__tip-wrapper tip--chronlogical">
           {% for i in range(0,6) %}
-            {% set obj = {title: ("Overskrift " + (i+1)), reverse: i%2!=0, noImage: i==3} %}
+            {% set obj = {title: i+1, reverse: i%2!=0, noImage: i==3} %}
             {% include "bits/article-tip.html" %}
           {% endfor %}
         </div>
@@ -43,8 +43,8 @@
   <nav class="article__nav" role="navigation">
     <div class="article__nav-wrapper">
       <a href="#" class="article__nav-item nav-item article--prev">
-        <div class="nav-item__image" style="background-image: url('images/unsplash01.jpg')">
-          <img src="images/unsplash01.jpg" alt="blåbær!" />
+        <div class="nav-item__image" style="background-image: url('/images/unsplash01.jpg')">
+          <img src="/images/unsplash01.jpg" alt="blåbær!" />
         </div>
         <div class="nav-item__info">
           <div class="nav-item__label">Forrige</div>
@@ -52,8 +52,8 @@
         </div>
       </a>
       <a href="#" class="article__nav-item nav-item article--next">
-        <div class="nav-item__image" style="background-image: url('images/unsplash01.jpg')">
-          <img src="images/unsplash01.jpg" alt="blåbær!" />
+        <div class="nav-item__image" style="background-image: url('/images/unsplash01.jpg')">
+          <img src="/images/unsplash01.jpg" alt="blåbær!" />
         </div>
         <div class="nav-item__info">
           <div class="nav-item__label">Neste</div>

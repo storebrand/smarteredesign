@@ -44,6 +44,14 @@ app.get('/tips', function (req, res) {
 
 });
 
+app.get('/tips/kronologisk', function (req, res) {
+    var _this = this;
+
+    var data = {type: 'tips'};
+    res.render('tips-chronological.html', data);
+
+});
+
 var server = app.listen(process.env.PORT || 3000, function () {
   var host = server.address().address;
   var port = server.address().port;

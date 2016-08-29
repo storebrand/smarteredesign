@@ -699,7 +699,10 @@
 
       // NEXT
       &.article--next {
-        padding-top: 2rem;
+        @media (max-width: @break-point-s) {
+          padding-top: 2rem;  
+        }
+
       }
 
       // PREVIOUS
@@ -836,13 +839,14 @@
           padding-left: 0;
           padding-right: 4rem;
         }
-
       }
     }
 
     .no-image & {
       flex: none;
       text-align: center;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
 
       &:first-child {
         display: none;
@@ -867,14 +871,24 @@
       }
     }
 
-    .article__tip-count {
-      margin: 0 0 0.5em 0;
+    .article__tip-header {
+      margin: 0 0 1em 0;
       .open-sans-bold;
-      font-size: @font-size-l;
+      font-size: @font-size-m;
+
+      .tip--chronological & {
+        font-size: @font-size-l;
+        margin: 0 0 0.5em 0;
+      }
+
       color: @color-grey-dark;
 
       @media (min-width: @break-point-m-plus) {
-        font-size: 74px;
+        font-size: @font-size-ml;
+
+        .tip--chronological & {
+          font-size: 74px;
+        }
       }
 
       @media (max-width: @break-point-m-min) {
