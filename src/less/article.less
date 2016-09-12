@@ -571,6 +571,26 @@
             }
           }
 
+          .article__body-image--floating {
+            float: left;
+            max-width: 33%;
+            margin: 1rem 2rem 1rem @padding-left-min-ls;
+
+            @media (max-width: @break-point-xs) {
+              margin-left: @padding-left-min-ss;
+            }
+          }
+
+          .article__body-image--floating-right {
+            float: right;
+            max-width: 33%;
+            margin: 1rem @padding-right-min-ls 1rem 2rem;
+
+            @media (max-width: @break-point-xs) {
+              margin-right: @padding-left-min-ss;
+            }
+          }
+
         // ARTICLE QUOTE MODULE
         .article__quote-wrapper {
           margin: 3em @padding-right-min-ls 3em @padding-left-min-ls;
@@ -602,6 +622,76 @@
         .article__infographics {
 
         }
+
+  //ARTICLE FACT BOX. FREE TEXT OR UL, OL LISTS
+  .article__fact-box {
+    margin: 1em @padding-right-default-ls 2em @padding-left-default-ls;
+    border: 1px solid @color-grey;
+
+    @media (max-width: @break-point-xs) {
+      margin: 1em @padding-right-default-ss 2em @padding-left-default-ss;
+    }
+  }
+
+    .fact-box__header {
+      border-bottom: 1px solid @color-grey;
+      padding: 1rem 2rem;
+
+      .custom-icon {
+        @s: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+        border: 1px solid @color-grey-text;
+        border-radius: 50%;
+        .open-sans-semi;
+        font-style: normal;
+        position: relative;
+        width: @s;
+        height: @s;
+
+
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: @color-grey-text;
+        }
+
+      }
+    }
+
+      .fact-box__title {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        font-size: @font-size-s;
+        text-transform: uppercase;
+        color: @color-grey-text;
+      }
+
+    .fact-box__body {
+      padding: 1rem 2rem;
+    }
+
+      .fact-box__text {
+        margin: 1rem 0 !important;
+        font-size: 1rem;
+        color: @color-grey-text;
+      }
+
+      .fact-box__list {
+        margin: 1rem 0;
+        padding: 0 1rem;
+      }
+
+        .fact-box__list-item {
+          color: @color-grey-text;
+          margin-bottom: 6px;
+        }
+
+
 
   // ARTICLE PUBLISHED DATE
   .article__published {
@@ -700,7 +790,7 @@
       // NEXT
       &.article--next {
         @media (max-width: @break-point-s) {
-          padding-top: 2rem;  
+          padding-top: 2rem;
         }
 
       }

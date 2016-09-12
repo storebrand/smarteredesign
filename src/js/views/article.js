@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var _ = require('lodash');
+var ArticleShare = require('./article-share.js');
 
 
 var ArticleRelatedContent = require('./article-relatedcontent');
@@ -20,6 +21,10 @@ var ArticleView = {
       $(window).on('resize', _.bind(this.resizeMainImage, this));
       this.resizeMainImage();
     }
+
+    var articleShareEl = document.getElementById('article__share');
+    articleShareEl && ArticleShare.init(articleShareEl);
+
   },
 
   resizeMainImage: function functionName(e) {

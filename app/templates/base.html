@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="https://i.icomoon.io/public/d81ecad9a3/Storebrand/style.css">
     <link rel="stylesheet" href="/css/style.css" media="screen" title="Styles" charset="utf-8">
     <script src="js/modernizr.js" charset="utf-8"></script>
+    <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+	  <meta property="og:type"          content="website" />
+	  <meta property="og:title"         content="Your Website Title" />
+	  <meta property="og:description"   content="Your description" />
+	  <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
   </head>
   <body class="{{type}}-page">
     {% include "bits/header.html" %}
@@ -28,5 +33,29 @@
         App.init({type: '{{type}}', id: '{{id}}'});
       })();
     </script-->
+    <script type="text/javascript" src="//platform.linkedin.com/in.js">
+      api_key: "YOUR_API_KEY_HERE"
+      authorize: true
+    </script>
+
+    <!-- Load Facebook SDK for JavaScript -->
+  	<div id="fb-root"></div>
+  	<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : null,
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+      };
+
+      (function(d, s, id) {
+    	  var js, fjs = d.getElementsByTagName(s)[0];
+    	  if (d.getElementById(id)) return;
+    	  js = d.createElement(s); js.id = id;
+    	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&version=v2.7";
+    	  fjs.parentNode.insertBefore(js, fjs);
+    	}(document, 'script', 'facebook-jssdk'));
+    </script>
   </body>
 </html>
