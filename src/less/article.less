@@ -359,6 +359,13 @@
           transition: flex-basis 200ms;
         }
 
+        .info-article-page & {
+          margin: 0 auto;
+
+          @media (min-width: @break-point-m) {
+            flex: 1;
+          }
+        }
 
       }
 
@@ -372,6 +379,11 @@
 
         p {
           margin: 1em @padding-right-default-ls 2em @padding-left-default-ls;
+
+          @media(max-width: @break-point-m-min) {
+            margin-left: @padding-left-default-ss;
+            margin-right: @padding-right-default-ss;
+          }
 
           @media (max-width: @break-point-xs) {
             font-size: @font-size-plus;
@@ -524,6 +536,11 @@
               margin-top: 2em;
             }
 
+            @media(max-width: @break-point-m-min) {
+              margin-left: @padding-left-default-ss;
+              margin-right: @padding-right-default-ss;
+            }
+
             @media (max-width: @break-point-xs) {
               margin: 1em @padding-right-default-ss 2em @padding-left-default-ss;
             }
@@ -531,6 +548,11 @@
 
           h3 {
             margin: 2em @padding-right-default-ls 1em @padding-left-default-ls;
+
+            @media(max-width: @break-point-m-min) {
+              margin-left: @padding-left-default-ss;
+              margin-right: @padding-right-default-ss;
+            }
 
             @media (max-width: @break-point-xs) {
               margin: 2em @padding-right-default-ss 1em @padding-left-default-ss;
@@ -628,6 +650,11 @@
     margin: 1em @padding-right-default-ls 2em @padding-left-default-ls;
     border: 1px solid @color-grey;
 
+    @media(max-width: @break-point-m-min) {
+      margin-left: @padding-left-default-ss;
+      margin-right: @padding-right-default-ss;
+    }
+
     @media (max-width: @break-point-xs) {
       margin: 1em @padding-right-default-ss 2em @padding-left-default-ss;
     }
@@ -679,6 +706,19 @@
         margin: 1rem 0 !important;
         font-size: 1rem;
         color: @color-grey-text;
+
+        .icon-link {
+          color: @color-profile;
+          text-decoration: none;
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 2px;
+          margin-right: 2px;
+
+          .icon {
+            font-size: 1.5em;
+          }
+        }
       }
 
       .fact-box__list {
@@ -698,6 +738,11 @@
     margin: 1em @padding-right-default-ls 1em @padding-left-default-ls;
     color: @color-grey-text;
 
+    @media(max-width: @break-point-m-min) {
+      margin-left: @padding-left-default-ss;
+      margin-right: @padding-right-default-ss;
+    }
+
     @media (max-width: @break-point-xs) {
       margin: 1em @padding-right-default-ss 1em @padding-left-default-ss;
     }
@@ -713,6 +758,11 @@
   // TAGS WRAPPER - USED BOTH IN HEADER AND BODY TEXT
   .article__tags {
     margin: 2em @padding-right-default-ls 1em @padding-left-default-ls;
+
+    @media(max-width: @break-point-m-min) {
+      margin-left: @padding-left-default-ss;
+      margin-right: @padding-right-default-ss;
+    }
 
     @media (max-width: @break-point-xs) {
       margin: 2em @padding-right-default-ss 1em @padding-left-default-ss;

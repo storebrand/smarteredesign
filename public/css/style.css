@@ -692,6 +692,14 @@ a {
     flex: 0 0 90%;
     transition: flex-basis 200ms;
   }
+  .info-article-page .article__content {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .info-article-page .article__content {
+    flex: 1;
+  }
 }
 .article__abstract {
   font-size: 1.375rem;
@@ -699,6 +707,12 @@ a {
 }
 .article__abstract p {
   margin: 1em 16% 2em 12%;
+}
+@media (max-width: 767px) {
+  .article__abstract p {
+    margin-left: 8%;
+    margin-right: 12%;
+  }
 }
 @media (max-width: 375px) {
   .article__abstract p {
@@ -834,6 +848,12 @@ a {
 .article__body-text p:first-child {
   margin-top: 2em;
 }
+@media (max-width: 767px) {
+  .article__body-text p {
+    margin-left: 8%;
+    margin-right: 12%;
+  }
+}
 @media (max-width: 375px) {
   .article__body-text p {
     margin: 1em 12% 2em 8%;
@@ -841,6 +861,12 @@ a {
 }
 .article__body-text h3 {
   margin: 2em 16% 1em 12%;
+}
+@media (max-width: 767px) {
+  .article__body-text h3 {
+    margin-left: 8%;
+    margin-right: 12%;
+  }
 }
 @media (max-width: 375px) {
   .article__body-text h3 {
@@ -911,6 +937,12 @@ a {
   margin: 1em 16% 2em 12%;
   border: 1px solid #e6e6e6;
 }
+@media (max-width: 767px) {
+  .article__fact-box {
+    margin-left: 8%;
+    margin-right: 12%;
+  }
+}
 @media (max-width: 375px) {
   .article__fact-box {
     margin: 1em 12% 2em 8%;
@@ -956,6 +988,17 @@ a {
   font-size: 1rem;
   color: #404040;
 }
+.fact-box__text .icon-link {
+  color: #bb1b18;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.fact-box__text .icon-link .icon {
+  font-size: 1.5em;
+}
 .fact-box__list {
   margin: 1rem 0;
   padding: 0 1rem;
@@ -967,6 +1010,12 @@ a {
 .article__published {
   margin: 1em 16% 1em 12%;
   color: #404040;
+}
+@media (max-width: 767px) {
+  .article__published {
+    margin-left: 8%;
+    margin-right: 12%;
+  }
 }
 @media (max-width: 375px) {
   .article__published {
@@ -980,6 +1029,12 @@ a {
 }
 .article__tags {
   margin: 2em 16% 1em 12%;
+}
+@media (max-width: 767px) {
+  .article__tags {
+    margin-left: 8%;
+    margin-right: 12%;
+  }
 }
 @media (max-width: 375px) {
   .article__tags {
