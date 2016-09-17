@@ -36,6 +36,14 @@ app.get('/article', function (req, res) {
 
 });
 
+app.get('/comment', function (req, res) {
+    var _this = this;
+
+    var data = {type: 'article-comment'};
+    res.render('article-comment.html', data);
+
+});
+
 app.get('/about', function (req, res) {
     var _this = this;
 

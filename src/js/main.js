@@ -6,10 +6,18 @@ var Header = require('./views/header');
 var App = {
   init: function(obj) {
 
+    var couldBeLongRead = false;
+
     if(obj.type) {
       switch (obj.type) {
         case "article":
         case "report":
+        case "info-article":
+        case "article-comment":
+          couldBeLongRead = true;
+          console.log("is longread");
+          ArticleView.init(document.getElementById('article'), obj);
+          break;
         case "tips":
           ArticleView.init(document.getElementById('article'), obj);
           break;
@@ -24,7 +32,7 @@ var App = {
     var height = $(window).height();
     var prev = window.scrollY;
     var $hsp = $('.header-scroll-progress');
-    var $article = $('article');
+    var $article = $('#article');
     $(window).on('scroll', function(e) {
       delta += (prev - window.scrollY);
       prev = window.scrollY;
@@ -34,7 +42,7 @@ var App = {
         delta = 0;
       }
 
-      if(obj.type && (obj.type === "article" || obj.type === "report")) {
+      if(couldBeLongRead) {
         $hsp.width(Math.min(($(window).scrollTop()/($article.height() - $(window).height())*100), 100)+"%");
       }
 
