@@ -137,6 +137,23 @@
         flex: 0 0 calc(100%/3*2);
       }
     }
+
+    .grid-item__content:hover {
+
+      .grid-item__image:after {
+        transition: all 0.5s;
+        height: 200%;
+        // background-color: rgba(0,0,0,0.6);
+      }
+
+      .grid-item__title {
+        text-decoration: none;
+
+        .icon {
+          color: inherit;
+        }
+      }
+    }
   }
 
     // CONTENT WRAPPER
@@ -144,6 +161,16 @@
       display: block;
       text-decoration: none;
       color: @color-black;
+
+      &:hover {
+        .grid-item__title {
+          text-decoration: underline;
+
+          .icon {
+            color: @color-profile;
+          }
+        }
+      }
 
       .grid-item--columnist & {
         background-color: @color-profile;
@@ -157,10 +184,6 @@
           float: left;
           padding-bottom: 56.25%;
         }
-
-        // @media (max-width: @break-point-l) {
-        //   padding: 1rem;
-        // }
       }
     }
 
@@ -176,6 +199,7 @@
           position: relative;
 
           &:after {
+            transition: all 0.5s;
             content: " ";
             position: absolute;
             bottom: 0;
@@ -248,9 +272,17 @@
       // ITEM TITLE
       .grid-item__title {
         .open-sans-semi;
-        font-size: @font-size-sm;
+        font-size: @font-size-m;
         color: @color-profile;
         line-height: 1.4em;
+
+        .section-grid--four & {
+          font-size: @font-size-sm2;
+        }
+
+        .section-grid--two-thirds & {
+          font-size: @font-size-sm2;
+        }
 
         .grid-item--simple & {
           margin-top: 0;
@@ -267,8 +299,9 @@
           text-align: center;
           line-height: 1.2em;
           color: @color-white;
-          padding: 0 4%;
+          padding: 0 10%;
           box-sizing: border-box;
+          margin-bottom: 1.1em;
 
           @media (min-width: @break-point-l) {
             font-size: @font-size-xl;
@@ -289,12 +322,13 @@
             vertical-align: middle;
             color: @color-grey-dark;
             margin-left: 5px;
-            font-size: 0.9em;
+            font-size: 0.7em;
           }
         }
 
         .grid-item--columnist & {
           color: @color-white;
+          font-size: @font-size-sm2;
           margin: 0.4em 0;
         }
 

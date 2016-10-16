@@ -44,8 +44,9 @@
   .header__row--additional-menu {
     z-index: 1;
 
+    // transform: translateZ(-1em);
     transition: transform 200ms linear;
-    transform: translate(0,-500%);
+    transform: translate(0,-300%);
     pointer-events: none;
 
     .menu--open & {
@@ -106,14 +107,18 @@
         text-decoration: none;
       }
 
-      .lowercase {
-        color: @color-grey-dark;
+      svg {
+        width: 250px;
       }
 
-      .uppercase {
-        text-transform: uppercase;
-        color: @color-profile;
-      }
+      // .lowercase {
+      //   color: @color-grey-dark;
+      // }
+      //
+      // .uppercase {
+      //   text-transform: uppercase;
+      //   color: @color-profile;
+      // }
 
     }
 
@@ -174,7 +179,7 @@
           }
 
           .icon {
-            font-size: 1.6rem;
+            font-size: 1.9rem;
             color: @color-grey-text;
             position: absolute;
             top: 50%;
@@ -194,6 +199,7 @@
           }
 
           .icon-icon_close {
+            font-size: 1.6rem;
             display: none;
 
             .menu--open & {
@@ -209,7 +215,7 @@
             box-sizing: border-box;
             .open-sans-light;
             font-size: @font-size-s;
-            padding-left: 2rem;
+            padding-left: 2.5rem;
             outline: none;
             -webkit-appearance: none;
 
@@ -278,9 +284,17 @@
                 font: 0/0 a;
                 color: @color-grey-text;
                 text-decoration: none;
+
+                &:hover {
+                  .icon {
+                    transition: color 0.5s;
+                    color: @color-profile;
+                  }
+                }
               }
 
               .icon {
+                transition: color 0.5s;
                 font-size: 1.4rem;
               }
 
@@ -298,7 +312,7 @@
 
             .menu__tags-list {
               list-style: none;
-              padding: 1rem 0;
+              padding: 1.4rem 0;
               margin: 0;
             }
 
@@ -309,7 +323,12 @@
 
                 a {
                   .menu-link;
-                  font-size: @font-size-plus;
+                  font-size: @font-size-sm;
+
+                  &:hover {
+                    color: @color-profile;
+                    border-bottom-color: @color-profile;
+                  }
                 }
               }
 

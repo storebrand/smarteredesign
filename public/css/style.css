@@ -9,9 +9,11 @@
   text-decoration: none;
   color: #404040;
   border-bottom: 1px solid transparent;
+  transition: all 0.5s;
 }
 .menu-link:hover {
   border-bottom-color: #404040;
+  transition: all 0.5s;
 }
 .text-link {
   text-decoration: underline;
@@ -200,7 +202,7 @@ a {
 .header__row--additional-menu {
   z-index: 1;
   transition: transform 200ms linear;
-  transform: translate(0, -500%);
+  transform: translate(0, -300%);
   pointer-events: none;
 }
 .menu--open .header__row--additional-menu {
@@ -257,12 +259,8 @@ a {
 .header__title a {
   text-decoration: none;
 }
-.header__title .lowercase {
-  color: #666666;
-}
-.header__title .uppercase {
-  text-transform: uppercase;
-  color: #bb1b18;
+.header__title svg {
+  width: 250px;
 }
 .header__logo {
   text-align: right;
@@ -309,7 +307,7 @@ a {
   }
 }
 .filters__search .icon {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   color: #404040;
   position: absolute;
   top: 50%;
@@ -325,6 +323,7 @@ a {
   flex: 0 0 100%;
 }
 .filters__search .icon-icon_close {
+  font-size: 1.6rem;
   display: none;
 }
 .menu--open .filters__search .icon-icon_close {
@@ -338,7 +337,7 @@ a {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 0.9375rem;
-  padding-left: 2rem;
+  padding-left: 2.5rem;
   outline: none;
   -webkit-appearance: none;
 }
@@ -404,7 +403,12 @@ a {
   color: #404040;
   text-decoration: none;
 }
+.filters__option a:hover .icon {
+  transition: color 0.5s;
+  color: #bb1b18;
+}
 .filters__option .icon {
+  transition: color 0.5s;
   font-size: 1.4rem;
 }
 .menu__navigation {
@@ -412,7 +416,7 @@ a {
 }
 .menu__tags-list {
   list-style: none;
-  padding: 1rem 0;
+  padding: 1.4rem 0;
   margin: 0;
 }
 .menu__tag {
@@ -424,10 +428,16 @@ a {
   text-decoration: none;
   color: #404040;
   border-bottom: 1px solid transparent;
-  font-size: 1.125rem;
+  transition: all 0.5s;
+  font-size: 1.375rem;
 }
 .menu__tag a:hover {
   border-bottom-color: #404040;
+  transition: all 0.5s;
+}
+.menu__tag a:hover {
+  color: #bb1b18;
+  border-bottom-color: #bb1b18;
 }
 .menu__tag--selected a {
   color: #bb1b18;
@@ -439,10 +449,12 @@ a {
   text-decoration: none;
   color: #404040;
   border-bottom: 1px solid transparent;
+  transition: all 0.5s;
   font-size: 0.9375rem;
 }
 .header__info-menu a:hover {
   border-bottom-color: #404040;
+  transition: all 0.5s;
 }
 .header-scroll-progress {
   height: 4px;
@@ -1473,10 +1485,26 @@ a {
     flex: 0 0 calc(66.66666667%);
   }
 }
+.grid-item--full .grid-item__content:hover .grid-item__image:after {
+  transition: all 0.5s;
+  height: 200%;
+}
+.grid-item--full .grid-item__content:hover .grid-item__title {
+  text-decoration: none;
+}
+.grid-item--full .grid-item__content:hover .grid-item__title .icon {
+  color: inherit;
+}
 .grid-item__content {
   display: block;
   text-decoration: none;
   color: #000;
+}
+.grid-item__content:hover .grid-item__title {
+  text-decoration: underline;
+}
+.grid-item__content:hover .grid-item__title .icon {
+  color: #bb1b18;
 }
 .grid-item--columnist .grid-item__content {
   background-color: #bb1b18;
@@ -1501,6 +1529,7 @@ a {
   position: relative;
 }
 .grid-item--full .grid-item__image:after {
+  transition: all 0.5s;
   content: " ";
   position: absolute;
   bottom: 0;
@@ -1568,9 +1597,15 @@ a {
 .grid-item__title {
   font-family: 'Open Sans Semibold', sans-serif;
   font-weight: 500;
-  font-size: 1.375rem;
+  font-size: 1.75rem;
   color: #bb1b18;
   line-height: 1.4em;
+}
+.section-grid--four .grid-item__title {
+  font-size: 1.5625rem;
+}
+.section-grid--two-thirds .grid-item__title {
+  font-size: 1.5625rem;
 }
 .grid-item--simple .grid-item__title {
   margin-top: 0;
@@ -1586,8 +1621,9 @@ a {
   text-align: center;
   line-height: 1.2em;
   color: #FFF;
-  padding: 0 4%;
+  padding: 0 10%;
   box-sizing: border-box;
+  margin-bottom: 1.1em;
 }
 @media (min-width: 1024px) {
   .grid-item--full .grid-item__title {
@@ -1609,10 +1645,11 @@ a {
   vertical-align: middle;
   color: #666666;
   margin-left: 5px;
-  font-size: 0.9em;
+  font-size: 0.7em;
 }
 .grid-item--columnist .grid-item__title {
   color: #FFF;
+  font-size: 1.5625rem;
   margin: 0.4em 0;
 }
 .section-grid--two-thirds .grid-item--full .grid-item__title {
