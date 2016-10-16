@@ -37,7 +37,7 @@
   .article--comment & {
     @media(min-width: @break-point-l) {
       display: flex;
-      margin: 0 @padding-right-default-ls 0 @padding-left-default-ls;
+      margin: 0 @padding-right-default-ls 3rem @padding-left-default-ls;
     }
   }
 }
@@ -116,7 +116,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      padding: 2rem 0;
+      padding: 2rem 0 4rem 0;
 
       color: @color-white;
       text-align: center;
@@ -148,7 +148,7 @@
 
     // THE ARTICLE TITLE
     .article__title {
-      .signa-light;
+      .signa;
       line-height: 1.2em;
       font-size: @font-size-ml;
       margin: 0.6em 0 0.2em 0;
@@ -159,7 +159,7 @@
 
       .article--report & {
         font-size: @font-size-l;
-        margin: 0.5em 4% 0.2em 4%;
+        margin: 0.2em 4% 0.2em 4%;
 
         @media(min-width: @break-point-m-plus) {
           font-size: @font-size-xl;
@@ -213,7 +213,7 @@
       }
 
       @media (min-width: @break-point-m) {
-        flex: 0 0 30%;
+        flex: 0 0 25%;
         transition: flex-basis @aside-transition-duration;
         border-right: 1px solid @color-grey;
         box-sizing: border-box;
@@ -406,7 +406,7 @@
 
       @media (min-width: @break-point-m) {
         padding-top: 4rem;
-        flex: 0 0 70%;
+        flex: 0 0 75%;
         transition: flex-basis 200ms;
         box-sizing: border-box;
 
@@ -423,7 +423,7 @@
           margin: 0 auto;
 
           @media (min-width: @break-point-m) {
-            flex: 1;
+            flex: 0.8;
           }
         }
 
@@ -435,7 +435,7 @@
       // ARTICLE ABSTRACT / SUMMARY
       .article__abstract {
         font-size: @font-size-sm;
-        line-height: 1.5em;
+        line-height: 1.7em;
 
         p {
           margin: 1em @padding-right-default-ls 2em @padding-left-default-ls;
@@ -485,7 +485,7 @@
         .article__meta-length {
           display: inline-block;
           vertical-align: top;
-          padding: 8px 1rem 8px 0;
+          padding: 1rem 1rem 1rem 0;
           text-align: right;
           box-sizing: border-box;
 
@@ -505,7 +505,7 @@
           vertical-align: top;
 
           border-left: 1px solid @color-grey;
-          padding: 8px 0 8px 1rem;
+          padding: 1rem 0 1rem 1rem;
           box-sizing: border-box;
 
           @media (min-width: @break-point-s-plus) {
@@ -551,12 +551,20 @@
               vertical-align: middle;
               text-decoration: none;
               font-size: 2rem;
-              color: @color-grey-text;
+              color: @color-grey-dark;
+              transition: color 0.5s;
+              margin-right: 4px;
+
+              &:hover {
+                transition: color 0.5s;
+                color: @color-profile;
+              }
             }
 
           .article__meta-label {
             display: inline-block;
             vertical-align: middle;
+            .open-sans-semi;
             font-size: @font-size-xs;
             text-transform: uppercase;
             line-height: 1.2em;
@@ -620,7 +628,15 @@
           }
 
           a {
+            color: @color-profile;
+            border-bottom: 1px solid transparent;
+            text-decoration: none;
+            transition: color 0.5s;
 
+            &:hover {
+              transition: color 0.5s;
+              border-bottom-color: @color-profile;
+            }
           }
 
           ul {
@@ -844,6 +860,7 @@
       display: inline-block;
       border: 1px solid @color-profile;
       padding: 4px 12px;
+      .open-sans-semi;
       text-transform: uppercase;
       color: @color-profile;
       text-decoration: none;
@@ -852,7 +869,7 @@
 
       .article__header & {
         color: @color-grey-text;
-        border-color: @color-grey-text;
+        border-color: @color-grey-dark;
       }
 
       .article--report .article__header & {
@@ -1099,4 +1116,10 @@
     .article__tip-description {
       margin-left: 0 !important;
       margin-right: 0 !important;
+
+      .no-image & {
+        max-width: 680px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
     }

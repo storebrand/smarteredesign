@@ -276,8 +276,16 @@
         color: @color-profile;
         line-height: 1.4em;
 
+        @media (max-width: @break-point-m-min) {
+          font-size: @font-size-sm;
+        }
+
         .section-grid--four & {
           font-size: @font-size-sm2;
+
+          @media (max-width: @break-point-m-min) {
+            font-size: @font-size-sm;
+          }
         }
 
         .section-grid--two-thirds & {
@@ -341,6 +349,16 @@
             .grid-item__icons {
               font-size: 1em;
             }
+          }
+        }
+
+        .section-grid--two-thirds .grid-item--default & {
+          @media (max-width: @break-point-l-min) {
+            font-size: @font-size-ml;
+          }
+
+          @media (max-width: @break-point-m-min) {
+            font-size: @font-size-m;
           }
         }
       }

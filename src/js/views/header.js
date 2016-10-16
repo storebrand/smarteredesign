@@ -54,6 +54,7 @@ var Header = {
   },
 
   hideMenu: function () {
+    
     if(!this.$el.hasClass('menu--open')) return;
     this.$searchField.off('blur');
     if(this.$searchField.is(':focus')) this.$searchField.blur();
