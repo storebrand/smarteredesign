@@ -260,6 +260,11 @@ a {
 .header__title svg {
   width: 250px;
 }
+@media all and (-ms-high-contrast: none) {
+  .header__title svg {
+    height: 16px;
+  }
+}
 .header__logo {
   text-align: right;
   width: 12%;
@@ -463,6 +468,7 @@ a {
   z-index: 101;
 }
 .main {
+  display: block;
   padding-top: 106px;
 }
 @media (max-width: 479px) {

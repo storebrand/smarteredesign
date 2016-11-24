@@ -113,6 +113,10 @@
 
       svg {
         width: 250px;
+
+        @media all and (-ms-high-contrast: none) {
+          height: 16px;
+        }
       }
 
       // .lowercase {
@@ -362,6 +366,7 @@
     }
 
 .main {
+  display: block;
   padding-top: @header-height;
 
   @media(max-width: @break-point-s-min) {
