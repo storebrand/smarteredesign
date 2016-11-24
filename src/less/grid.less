@@ -271,12 +271,17 @@
         @media(min-width: @break-point-l) {
           display: block;
           flex: 0 0 50%;
-          padding: 2rem;
-          box-sizing: border-box;
         }
 
 
       }
+
+        .grid-item__image-content {
+          @media(min-width: @break-point-l) {
+            padding: 2rem;
+            box-sizing: border-box;
+          }
+        }
 
       //USED AS INFO WRAPPER ON grid-item--columnist
       .grid-item__info {

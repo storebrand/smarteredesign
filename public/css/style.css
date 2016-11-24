@@ -1219,6 +1219,7 @@ a {
 .article__tag {
   display: inline-block;
   border: 1px solid #bb1b18;
+  border-bottom: 1px solid #bb1b18 !important;
   padding: 4px 12px;
   font-family: 'Open Sans Semibold', sans-serif;
   font-weight: 500;
@@ -1627,6 +1628,10 @@ a {
   .grid-item__image-wrapper {
     display: block;
     flex: 0 0 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .grid-item__image-content {
     padding: 2rem;
     box-sizing: border-box;
   }
