@@ -1234,19 +1234,24 @@ a {
     width: 100%;
   }
 }
+.article__advisory-image {
+  text-align: center;
+  padding: 1rem 1rem 0 1rem;
+}
 @media (min-width: 480px) {
   .article__advisory-image {
     display: table-cell;
     width: 20%;
     min-width: 20%;
+    padding-bottom: 1rem;
   }
 }
 .article__advisory-image img {
-  height: 100px;
+  height: 74px;
+  width: 74px;
 }
 .article__advisory-info {
   box-sizing: border-box;
-  border-left: 1px solid #e6e6e6;
   padding: 1rem;
   text-align: center;
 }
@@ -1256,16 +1261,18 @@ a {
     vertical-align: middle;
     width: 80%;
     min-width: 80%;
+    border-left: 1px solid #e6e6e6;
   }
 }
 .article__advisory-link {
   font-family: 'Open Sans Semibold', sans-serif;
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 1.375rem;
   display: inline-block;
   vertical-align: middle;
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
+  line-height: 1.3em;
 }
 .article__published {
   margin: 1em 16% 1em 12%;
