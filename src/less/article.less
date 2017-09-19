@@ -517,9 +517,6 @@
           padding-left: @padding-left-default-ss;
         }
 
-        .article--tips & {
-          padding-left: 0;
-        }
 
 
       }
@@ -536,9 +533,6 @@
             padding-right: 2rem;
           }
 
-          .article--tips & {
-            display: none;
-          }
 
         }
 
@@ -555,16 +549,6 @@
             padding-right: 1rem;
           }
 
-          .article--tips & {
-            border-left: none;
-            padding-left: 0;
-            display: block;
-            .restrain;
-
-            @media (max-width: @break-point-s) {
-              padding-left: 2rem;
-            }
-          }
 
         }
 
@@ -619,14 +603,6 @@
               }
             }
 
-            .article--tips & {
-              margin-left: 2rem;
-
-              @media (min-width: @break-point-l) {
-                margin-left: @padding-left-default-ls;
-              }
-
-            }
 
           }
 
@@ -973,6 +949,9 @@
         margin: 2rem;
       }
     }
+    .article--tips {
+        margin: 1em 16% 1em 12%;
+    }
   }
 
     // ARTICLE TAG
@@ -1220,6 +1199,7 @@
       margin: 0 0 1em 0;
       .open-sans-bold;
       font-size: @font-size-m;
+      line-height: 1em;
 
       .tip--chronological & {
         font-size: @font-size-l;
